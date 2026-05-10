@@ -22,35 +22,35 @@ const boardMembers = [
     name: "Mr Akshay Munjal",
     designation: "Founder and CEO, Hero Vired",
     photo: "/images/board/akshay-munjal.jpg",
-    linkedin: "#",
+    linkedin: "https://in.linkedin.com/in/akshay-munjal-5316467a",
     imageClass: "object-top",
   },
   {
     name: "Ms Swati Munjal",
     designation: "President, BML Munjal University",
     photo: "/images/board/swati-munjal.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/swati-munjal-3a5752",
     imageClass: "object-[60%_center]",
   },
   {
     name: "Prof Shyam Menon",
     designation: "Vice President, BML Munjal University",
     photo: "/images/board/shyam-menon.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/prof-shyam-menon-43655224b",
     imageClass: "",
   },
   {
     name: "Mr Ravi Pahuja",
     designation: "CEO, Raman Kant Munjal Foundation",
     photo: "/images/board/ravi-pahuja.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/ravi-pahuja-3798184",
     imageClass: "",
   },
   {
     name: "Dr Prem Kumar",
     designation: "Executive Director, Munjal BCU Centre of Innovation",
     photo: "/images/board/prem-kumar.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/prem-kumar-87966523b",
     imageClass: "object-top",
   },
 ];
@@ -96,7 +96,7 @@ export default function BoardPage() {
                 viewport={{ once: true }}
               >
                 <div className="group text-center p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20">
-                  <div className="relative w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden aspect-square">
+                  <div className="relative w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden aspect-square ring-3 ring-transparent group-hover:ring-primary transition-all duration-300">
                     <Image
                       src={member.photo}
                       alt={member.name}
@@ -105,7 +105,7 @@ export default function BoardPage() {
                       className={`w-full h-full object-cover ${member.imageClass}`}
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                     {member.name}
                   </h3>
                   <p className="mt-1 text-sm text-text-muted">
@@ -135,7 +135,7 @@ export default function BoardPage() {
                 className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
               >
                 <div className="group text-center p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20">
-                  <div className="relative w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden aspect-square">
+                  <div className="relative w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden aspect-square ring-3 ring-transparent group-hover:ring-primary transition-all duration-300">
                     <Image
                       src={member.photo}
                       alt={member.name}
@@ -144,7 +144,7 @@ export default function BoardPage() {
                       className={`w-full h-full object-cover ${member.imageClass}`}
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                     {member.name}
                   </h3>
                   <p className="mt-1 text-sm text-text-muted">

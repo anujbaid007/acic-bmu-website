@@ -8,7 +8,7 @@ import { LogoCloud } from "@/components/ui/logo-cloud";
 interface PartnerCategory {
   title: string;
   description: string;
-  logos: { src: string; alt: string }[];
+  logos: { src: string; alt: string; scale?: number }[];
 }
 
 const categories: PartnerCategory[] = [
@@ -16,17 +16,17 @@ const categories: PartnerCategory[] = [
     title: "Investor Partners",
     description: "Venture capitalists and angel investors fueling our startups' growth.",
     logos: [
-      { src: "/images/partners/investors/survam-partner.png", alt: "Survam Partners" },
+      { src: "/images/partners/investors/survam-partner.png", alt: "Survam Partners", scale: 2.2 },
       { src: "/images/partners/investors/lead-angels-network.jpg", alt: "Lead Angels Network" },
-      { src: "/images/partners/investors/indian-angel-network.png", alt: "Indian Angel Network" },
+      { src: "/images/partners/investors/indian-angel-network.png", alt: "Indian Angel Network", scale: 1.8 },
       { src: "/images/partners/investors/sanchi-connect.png", alt: "Sanchi Connect" },
       { src: "/images/partners/investors/campus-fund.png", alt: "Campus Fund" },
       { src: "/images/partners/investors/ah!-ventures.png", alt: "Ah! Ventures" },
-      { src: "/images/partners/investors/-we-founder-circle.png", alt: "We Founder Circle" },
+      { src: "/images/partners/investors/-we-founder-circle.png", alt: "We Founder Circle", scale: 1.8 },
       { src: "/images/partners/investors/real-time-angel-fund.png", alt: "Real Time Angel Fund" },
       { src: "/images/partners/investors/fluid-ventures.png", alt: "Fluid Ventures" },
       { src: "/images/partners/investors/yournest-vc.png", alt: "YourNest VC" },
-      { src: "/images/partners/investors/pontaq-vc.jpg", alt: "Pontaq VC" },
+      { src: "/images/partners/investors/pontaq-vc.jpg", alt: "Pontaq VC", scale: 1.8 },
       { src: "/images/partners/investors/100x.vc.svg", alt: "100x.VC" },
     ],
   },
@@ -34,16 +34,16 @@ const categories: PartnerCategory[] = [
     title: "Ecosystem Enablers",
     description: "Government bodies and ecosystem enablers supporting innovation.",
     logos: [
-      { src: "/images/partners/enablers/startup-india.png", alt: "Startup India" },
+      { src: "/images/partners/enablers/startup-india.png", alt: "Startup India", scale: 2.2 },
       { src: "/images/partners/enablers/india-ai-mission.png", alt: "India AI Mission" },
       { src: "/images/partners/enablers/atal-innovation-mission.jpg", alt: "Atal Innovation Mission" },
-      { src: "/images/partners/enablers/tie-delhi-ncr.png", alt: "TiE Delhi NCR" },
+      { src: "/images/partners/enablers/tie-delhi-ncr.png", alt: "TiE Delhi NCR", scale: 1.8 },
       { src: "/images/partners/enablers/isba.png", alt: "ISBA" },
-      { src: "/images/partners/enablers/wadhwani-foundation.png", alt: "Wadhwani Foundation" },
+      { src: "/images/partners/enablers/wadhwani-foundation.png", alt: "Wadhwani Foundation", scale: 1.8 },
       { src: "/images/partners/enablers/arthayan.png", alt: "Arthayan" },
       { src: "/images/partners/enablers/manthan-by-psa.jpg", alt: "Manthan by PSA" },
-      { src: "/images/partners/enablers/startup-haryana.jpg", alt: "Startup Haryana" },
-      { src: "/images/partners/enablers/meity-startup-hub.png", alt: "MeitY Startup Hub" },
+      { src: "/images/partners/enablers/startup-haryana.jpg", alt: "Startup Haryana", scale: 1.8 },
+      { src: "/images/partners/enablers/meity-startup-hub.png", alt: "MeitY Startup Hub", scale: 1.8 },
     ],
   },
   {
@@ -54,7 +54,7 @@ const categories: PartnerCategory[] = [
       { src: "/images/partners/service-providers/-aws.png", alt: "AWS" },
       { src: "/images/partners/service-providers/wivitan-solution.webp", alt: "Wivitan Solution" },
       { src: "/images/partners/service-providers/cunomial-accubate.webp", alt: "Cunomial (Accubate)" },
-      { src: "/images/partners/service-providers/openweaver.jpg", alt: "OpenWeaver" },
+      { src: "/images/partners/service-providers/openweaver.jpg", alt: "OpenWeaver", scale: 1.8 },
       { src: "/images/partners/service-providers/google.png", alt: "Google" },
       { src: "/images/partners/service-providers/ancrew-global.jpg", alt: "Ancrew Global" },
       { src: "/images/partners/service-providers/ezylegal.png", alt: "Ezylegal" },
@@ -65,14 +65,14 @@ const categories: PartnerCategory[] = [
     description: "Corporate partners providing market access and collaboration opportunities.",
     logos: [
       { src: "/images/partners/industry/hero-motocorp.png", alt: "Hero Motocorp" },
-      { src: "/images/partners/industry/hsbc.png", alt: "HSBC" },
+      { src: "/images/partners/industry/hsbc.png", alt: "HSBC", scale: 1.8 },
       { src: "/images/partners/industry/cii.png", alt: "CII" },
       { src: "/images/partners/industry/rane-group.png", alt: "Rane Group" },
       { src: "/images/partners/industry/aima.png", alt: "AIMA" },
       { src: "/images/partners/industry/hdfc-bank.png", alt: "HDFC Bank" },
-      { src: "/images/partners/industry/idfc-bank.png", alt: "IDFC Bank" },
+      { src: "/images/partners/industry/idfc-bank.png", alt: "IDFC Bank", scale: 1.8 },
       { src: "/images/partners/industry/sbi-bank.jpg", alt: "SBI Bank" },
-      { src: "/images/partners/industry/bpcl.png", alt: "BPCL" },
+      { src: "/images/partners/industry/bpcl.png", alt: "BPCL", scale: 1.8 },
       { src: "/images/partners/industry/icici-bank.svg", alt: "ICICI Bank" },
     ],
   },

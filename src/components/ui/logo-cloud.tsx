@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 type Logo = {
   src: string;
   alt: string;
+  scale?: number;
 };
 
 type LogoCloudProps = React.ComponentProps<"div"> & {
@@ -62,6 +63,7 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
                 width={140}
                 sizes="140px"
                 loading="lazy"
+                style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
               />
             ) : (
               <div className="h-8 md:h-10" />

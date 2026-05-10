@@ -206,7 +206,7 @@ export default function MentorsPage() {
                 viewport={{ once: true }}
               >
                 <div className="group text-center p-4 rounded-xl bg-white hover:shadow-lg transition-all duration-300 border border-border/50 hover:border-primary/20">
-                  <div className="relative w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden aspect-square border-3 border-section-alt group-hover:border-primary/20 transition-colors">
+                  <div className="relative w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden aspect-square ring-2 ring-transparent group-hover:ring-primary transition-all duration-300">
                     <Image
                       src={mentor.photo}
                       alt={mentor.name}
@@ -215,7 +215,7 @@ export default function MentorsPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-sm font-bold text-foreground leading-tight">
+                  <h3 className="text-sm font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
                     {mentor.name}
                   </h3>
                   <p className="mt-1 text-xs text-text-muted leading-snug">
