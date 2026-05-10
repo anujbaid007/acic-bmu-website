@@ -485,15 +485,26 @@ export default function HomePage() {
       {/* ========== STARTUP INDIA SEED FUND ========== */}
       <section className="relative py-0 overflow-hidden">
         {/* Top blue banner bar */}
-        <div className="bg-gradient-to-r from-[#1a237e] via-[#1565c0] to-[#1a237e] py-4">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-nowrap items-center justify-center gap-3 sm:gap-10">
-            <Image src="/images/logos/acic-logo.png" alt="ACIC-BMU" width={140} height={44} className="h-7 sm:h-10 w-auto brightness-0 invert shrink-0" />
-            <div className="w-px h-6 sm:h-8 bg-white/30 shrink-0" />
-            <div className="bg-white/10 rounded-md px-2 py-0.5 sm:px-3 sm:py-1 shrink-0"><Image src="/images/logos/bmu-logo.png" alt="BMU" width={140} height={44} className="h-7 sm:h-10 w-auto" /></div>
-            <div className="w-px h-6 sm:h-8 bg-white/30 shrink-0" />
-            <Image src="/images/logos/propel-logo.png" alt="Propel" width={140} height={44} className="h-7 sm:h-10 w-auto brightness-0 invert shrink-0" />
-            <div className="w-px h-6 sm:h-8 bg-white/30 shrink-0" />
-            <div className="bg-white/10 rounded-md px-2 py-0.5 sm:px-3 sm:py-1 shrink-0"><Image src="/images/partners/enablers/atal-innovation-mission.jpg" alt="AIM" width={140} height={44} className="h-7 sm:h-10 w-auto" /></div>
+        <div className="bg-gradient-to-r from-[#1a237e] via-[#1565c0] to-[#1a237e] py-5 sm:py-6">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-nowrap items-center justify-between gap-2 sm:gap-4">
+              {[
+                { src: "/images/logos/acic-logo.png", alt: "ACIC-BMU Foundation", cls: "h-5 sm:h-8" },
+                { src: "/images/logos/bmu-logo-alt.png", alt: "BML Munjal University", cls: "h-12 sm:h-20" },
+                { src: "/images/logos/propel-logo.png", alt: "Propel Incubator", cls: "h-5 sm:h-8" },
+                { src: "/images/partners/enablers/atal-innovation-mission.jpg", alt: "Atal Innovation Mission", cls: "h-5 sm:h-8" },
+              ].map((logo, i) => (
+                <div key={i} className="flex-1 flex items-center justify-center bg-white rounded-lg h-10 sm:h-14 px-2 sm:px-4 overflow-hidden">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={180}
+                    height={56}
+                    className={`${logo.cls} w-auto object-contain`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

@@ -12,84 +12,70 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 };
 
 export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
-  const desktopRows = Math.ceil(logos.length / 4);
+  // Pad logos to fill complete rows of 4
+  const remainder = logos.length % 4;
+  const paddedLogos: (Logo | null)[] = [
+    ...logos,
+    ...Array(remainder === 0 ? 0 : 4 - remainder).fill(null),
+  ];
+  const totalRows = paddedLogos.length / 4;
 
   return (
     <div
       className={cn(
-        "relative grid grid-cols-2 border-x md:grid-cols-4 overflow-hidden",
+        "relative grid grid-cols-2 md:grid-cols-4 border border-border/60 rounded-xl overflow-hidden",
         className
       )}
       {...props}
     >
-      <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-full border-t" />
+      {paddedLogos.map((logo, i) => {
+        const row = Math.floor(i / 4);
+        const col = i % 4;
+        const isLastRow = row === totalRows - 1;
+        const isLastCol = col === 3;
 
-      {logos.map((logo, i) => {
-        const dRow = Math.floor(i / 4);
-        const dCol = i % 4;
-        const mRow = Math.floor(i / 2);
-        const mCol = i % 2;
-        const totalMobileRows = Math.ceil(logos.length / 2);
+        // Checkerboard
+        const hasBg = (row + col) % 2 === 0;
 
-        const isLastDesktopRow = dRow === desktopRows - 1;
-        const isLastMobileRow = mRow === totalMobileRows - 1;
-
-        // Checkerboard: (row + col) % 2 === 0
-        const desktopBg = (dRow + dCol) % 2 === 0;
-
-        // Border right: on mobile every left col, on desktop every col except last in row
-        const hasMobileRightBorder = mCol === 0;
-        const hasDesktopRightBorder = dCol < 3;
+        // Plus icon at intersection (bottom-right corner of cell)
+        // Only show if not last row AND not last col (i.e., there's a cell below and to the right)
+        const showPlus = !isLastRow && !isLastCol && col % 2 === 0;
 
         return (
           <div
             key={i}
             className={cn(
-              "relative flex items-center justify-center px-4 py-8 md:p-8",
-              // Background
-              desktopBg ? "bg-secondary/40" : "bg-background",
-              // Right border
-              hasMobileRightBorder && "border-r",
-              !hasMobileRightBorder && hasDesktopRightBorder && "md:border-r",
-              // Bottom border
-              !isLastMobileRow && "border-b",
-              isLastMobileRow && !isLastDesktopRow && "md:border-b",
+              "relative flex items-center justify-center px-4 py-8 md:p-10",
+              hasBg ? "bg-muted/40" : "bg-background",
+              // Right border for all except last column
+              !isLastCol && "border-r border-border/60",
+              // Bottom border for all except last row
+              !isLastRow && "border-b border-border/60",
             )}
           >
-            <Image
-              alt={logo.alt}
-              className="pointer-events-none h-8 w-auto max-w-[100px] select-none object-contain md:h-10 md:max-w-[140px]"
-              height={40}
-              src={logo.src}
-              width={140}
-              sizes="140px"
-              loading="lazy"
-            />
+            {logo ? (
+              <Image
+                alt={logo.alt}
+                className="pointer-events-none h-8 w-auto max-w-[100px] select-none object-contain md:h-10 md:max-w-[140px]"
+                height={40}
+                src={logo.src}
+                width={140}
+                sizes="140px"
+                loading="lazy"
+              />
+            ) : (
+              <div className="h-8 md:h-10" />
+            )}
 
-            {/* Plus icons at row intersections */}
-            {dCol === 0 && !isLastDesktopRow && (
+            {showPlus && (
               <PlusIcon
-                className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6 text-muted-foreground/40"
+                className="absolute -right-[12.5px] -bottom-[12.5px] z-10 size-6 text-muted-foreground/30 hidden md:block"
                 strokeWidth={1}
               />
-            )}
-            {dCol === 2 && !isLastDesktopRow && (
-              <>
-                <PlusIcon
-                  className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6 hidden md:block text-muted-foreground/40"
-                  strokeWidth={1}
-                />
-                <PlusIcon
-                  className="-left-[12.5px] -bottom-[12.5px] absolute z-10 hidden size-6 md:block text-muted-foreground/40"
-                  strokeWidth={1}
-                />
-              </>
             )}
           </div>
         );
       })}
-
-      <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-full border-b" />
     </div>
   );
 }
