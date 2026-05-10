@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased text-[90%]`}>
-      <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
+      <body className="min-h-full flex flex-col font-sans" style={{ overflowX: "clip" }}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

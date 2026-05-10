@@ -271,6 +271,107 @@ function InnovatorsBanner() {
   );
 }
 
+function StartupScrollSection({ startups }: { startups: { name: string; description: string; logo: string }[] }) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["50vw", "-140vw"]);
+
+  return (
+    <section className="bg-white">
+      {/* Desktop: Horizontal scroll pinned */}
+      <div ref={sectionRef} className="hidden md:block h-[400vh] relative">
+        <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
+          {/* Heading inside sticky frame */}
+          <div className="max-w-2xl mx-auto text-center mb-14 px-4 flex-shrink-0">
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">
+              Success Stories
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
+              <span className="relative inline-block">
+                Startups
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                  <path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" />
+                </svg>
+              </span>{" "}
+              We&apos;ve Nurtured
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-text-muted">
+              From idea to market — our incubated startups are solving real-world problems across healthcare, climate tech, mobility, and more.
+            </p>
+          </div>
+
+          {/* Horizontal sliding cards */}
+          <motion.div style={{ x }} className="flex gap-8 pl-[10vw]">
+            {startups.map((startup) => (
+              <div
+                key={startup.name}
+                className="min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative group bg-section-alt border border-border/50 hover:border-primary/20 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center p-8"
+              >
+                <div className="w-32 h-32 mb-5 flex items-center justify-center">
+                  <Image src={startup.logo} alt={startup.name} width={128} height={128} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors mb-2">{startup.name}</h4>
+                <p className="text-sm text-text-muted leading-relaxed max-w-xs">{startup.description}</p>
+              </div>
+            ))}
+            {/* CTA card */}
+            <div className="min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative flex flex-col items-center justify-center text-center p-8 bg-primary/5 border-2 border-dashed border-primary/30">
+              <h4 className="text-xl font-bold text-foreground mb-2">And Many More...</h4>
+              <p className="text-sm text-text-muted mb-6">110+ startups incubated across multiple sectors</p>
+              <Link href="/startups" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-all">
+                View All Startups <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Mobile: Vertical stack with animations */}
+      <div className="md:hidden px-4 sm:px-6 py-12">
+        <div className="text-center mb-8">
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">
+            Success Stories
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground">
+            Startups We&apos;ve Nurtured
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-text-muted">
+            From idea to market — solving real-world problems across multiple sectors.
+          </p>
+        </div>
+        <div className="space-y-4">
+          {startups.map((startup, i) => (
+            <motion.div
+              key={startup.name}
+              className="bg-section-alt rounded-2xl p-5 flex items-center gap-4 border border-border/50"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+            >
+              <div className="w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                <Image src={startup.logo} alt={startup.name} width={56} height={56} className="w-full h-full object-contain" />
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-foreground">{startup.name}</h4>
+                <p className="text-xs text-text-muted leading-relaxed mt-1">{startup.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link href="/startups" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-all">
+            View All Startups <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -690,34 +791,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== STARTUPS ========== */}
-      <section className="py-12 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto text-center mb-12">
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">Success Stories</span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground"><span className="relative inline-block">Startups<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span> We&apos;ve Nurtured</h2>
-            <p className="mt-4 text-lg leading-relaxed text-text-muted">From idea to market — our incubated startups are solving real-world problems across healthcare, climate tech, mobility, and more.</p>
-          </motion.div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-            {startups.map((startup, i) => (
-              <motion.div key={startup.name} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="group">
-                <div className="bg-section-alt rounded-2xl p-6 h-full flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20">
-                  <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                    <Image src={startup.logo} alt={startup.name} width={64} height={64} className="w-full h-full object-contain" />
-                  </div>
-                  <h4 className="text-sm font-semibold text-foreground mb-1">{startup.name}</h4>
-                  <p className="text-xs text-text-muted leading-relaxed">{startup.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/startups" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-all">
-              View All Startups <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* ========== STARTUPS — Horizontal Scroll Reveal ========== */}
+      <StartupScrollSection startups={startups} />
 
       {/* ========== TESTIMONIALS ========== */}
       <section className="py-12 lg:py-24 bg-gradient-to-b from-section-alt to-white overflow-hidden">
