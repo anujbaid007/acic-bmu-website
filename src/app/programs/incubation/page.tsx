@@ -144,7 +144,7 @@ export default function IncubationPage() {
       </section>
 
       {/* Key Numbers */}
-      <section className="py-16 bg-white border-b border-border">
+      <section className="py-10 lg:py-16 bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -166,9 +166,9 @@ export default function IncubationPage() {
       </section>
 
       {/* Key Support Areas */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -225,7 +225,7 @@ export default function IncubationPage() {
       </section>
 
       {/* Investment & Programs */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Funding Support"
@@ -273,7 +273,7 @@ export default function IncubationPage() {
       </section>
 
       {/* Corporate Programs */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Corporate Partnerships"
@@ -308,7 +308,7 @@ export default function IncubationPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-primary via-primary-dark to-[#8b4513] text-white relative overflow-hidden">
+      <section className="py-12 lg:py-24 bg-gradient-to-br from-primary via-primary-dark to-[#8b4513] text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />

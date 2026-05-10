@@ -86,7 +86,7 @@ export default function Navbar() {
                 alt="ACIC-BMU Foundation"
                 width={180}
                 height={54}
-                className="h-11 w-auto"
+                className="h-9 sm:h-11 w-auto"
                 priority
               />
             </Link>

@@ -95,7 +95,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Impact Numbers */}
-      <section className="py-16 bg-white border-b border-border">
+      <section className="py-10 lg:py-16 bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -118,7 +118,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Program Cards */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Verticals"
@@ -179,7 +179,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-primary via-primary-dark to-[#8b4513] text-white relative overflow-hidden">
+      <section className="py-12 lg:py-24 bg-gradient-to-br from-primary via-primary-dark to-[#8b4513] text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />

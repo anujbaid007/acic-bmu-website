@@ -130,7 +130,7 @@ export default function PartnersPage() {
       {categories.map((category, idx) => (
         <section
           key={category.title}
-          className={idx % 2 === 0 ? "py-16 lg:py-20 bg-white" : "py-16 lg:py-20 bg-section-alt"}
+          className={idx % 2 === 0 ? "py-10 lg:py-20 bg-white" : "py-10 lg:py-20 bg-section-alt"}
         >
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -161,7 +161,7 @@ export default function PartnersPage() {
       ))}
 
       {/* Become a Partner CTA */}
-      <section className="py-20 bg-section-alt">
+      <section className="py-12 lg:py-20 bg-section-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionHeading
             label="Collaborate With Us"

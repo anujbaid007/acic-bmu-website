@@ -193,7 +193,7 @@ function InnovatorsBanner() {
   const gridY = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#1a1a2e] py-28 lg:py-36">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#1a1a2e] py-14 lg:py-36">
       {/* Parallax background orbs — big visible glows */}
       <motion.div style={{ y: orb1Y, x: orb1X }} className="absolute -top-32 right-1/4 w-[700px] h-[700px] bg-gradient-to-bl from-primary/20 via-primary/10 to-transparent rounded-full blur-3xl pointer-events-none" />
       <motion.div style={{ y: orb2Y, x: orb2X }} className="absolute -bottom-32 left-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-[#c9a84c]/15 via-[#c9a84c]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -275,14 +275,14 @@ export default function HomePage() {
   return (
     <>
       {/* ========== HERO ========== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-section-alt to-primary/5 min-h-screen flex items-center pt-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-section-alt to-primary/5 min-h-[70vh] lg:min-h-screen flex items-center pt-24">
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#e67e22" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -388,7 +388,7 @@ export default function HomePage() {
       <InnovatorsBanner />
 
       {/* ========== PROPEL PITCHFEST ========== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1b3d] via-[#162550] to-[#1a2d5e] py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1b3d] via-[#162550] to-[#1a2d5e] py-12 lg:py-24">
         <div className="absolute inset-0 pointer-events-none opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 border border-white/20 rounded-full" />
           <div className="absolute bottom-10 right-10 w-60 h-60 border border-white/10 rounded-full" />
@@ -571,7 +571,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== IMPACT NUMBERS ========== */}
-      <section className="py-16 bg-primary">
+      <section className="py-10 lg:py-16 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -589,9 +589,9 @@ export default function HomePage() {
       </section>
 
       {/* ========== ABOUT SNIPPET ========== */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
@@ -639,7 +639,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== PROGRAMS ========== */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto text-center mb-12">
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">Our Programs</span>
@@ -653,7 +653,7 @@ export default function HomePage() {
                   <div className="relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 h-full">
                     <GlowingEffect spread={40} glow proximity={64} disabled={false} borderWidth={2} />
                     <div className="relative h-52 overflow-hidden">
-                      <Image src={program.image} alt={program.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <Image src={program.image} alt={program.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 left-4">
                         <span className="px-3 py-1 bg-white/90 text-xs font-semibold rounded-full text-primary">{program.stats}</span>
@@ -680,7 +680,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== STARTUPS ========== */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto text-center mb-12">
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">Success Stories</span>
@@ -729,7 +729,7 @@ export default function HomePage() {
               <motion.div key={event.title} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-border/50 h-full">
                   <div className="relative h-48 overflow-hidden">
-                    <Image src={event.image} alt={event.title} fill className="object-cover object-bottom hover:scale-105 transition-transform duration-500" />
+                    <Image src={event.image} alt={event.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-bottom hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg font-bold text-foreground mb-2">{event.title}</h3>

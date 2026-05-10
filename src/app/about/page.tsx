@@ -64,9 +64,9 @@ export default function AboutPage() {
       </section>
 
       {/* ========== OVERVIEW ========== */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -141,7 +141,7 @@ export default function AboutPage() {
       </section>
 
       {/* ========== VISION & MISSION ========== */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Purpose"
@@ -210,9 +210,9 @@ export default function AboutPage() {
       </section>
 
       {/* ========== ABOUT BML MUNJAL UNIVERSITY ========== */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -270,14 +270,14 @@ export default function AboutPage() {
       </section>
 
       {/* ========== ABOUT ATAL INNOVATION MISSION ========== */}
-      <section className="py-24 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white relative overflow-hidden">
+      <section className="py-12 lg:py-24 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -344,7 +344,7 @@ export default function AboutPage() {
       </section>
 
       {/* ========== INFRASTRUCTURE GALLERY ========== */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Facilities"

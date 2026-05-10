@@ -131,7 +131,7 @@ export default function EventsPage() {
       </section>
 
       {/* Events Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Events"
@@ -187,7 +187,7 @@ export default function EventsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-section-alt">
+      <section className="py-12 lg:py-20 bg-section-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionHeading
             label="Get Involved"

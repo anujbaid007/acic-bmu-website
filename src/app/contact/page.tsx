@@ -101,7 +101,7 @@ export default function ContactPage() {
       </section>
 
       {/* ========== CONTACT INFO CARDS ========== */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Reach Out"
@@ -145,9 +145,9 @@ export default function ContactPage() {
       </section>
 
       {/* ========== CONTACT FORM & SOCIAL ========== */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -301,7 +301,7 @@ export default function ContactPage() {
       </section>
 
       {/* ========== MAP ========== */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Location"
@@ -319,7 +319,7 @@ export default function ContactPage() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.1!2d76.8472!3d28.3517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d2e17fffff%3A0x7e3c2b3f4a5d6e7f!2sBML%20Munjal%20University!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
-              height="450"
+              height="350"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"

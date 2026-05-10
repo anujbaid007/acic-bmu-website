@@ -82,10 +82,12 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
     >
       <Image
         alt={logo.alt}
-        className="pointer-events-none h-14 w-auto max-w-[160px] select-none object-contain md:h-16 md:max-w-[180px]"
-        height={64}
+        className="pointer-events-none max-h-10 w-auto max-w-[110px] select-none object-contain md:max-h-12 md:max-w-[130px]"
+        height={48}
         src={logo.src}
-        width={180}
+        width={130}
+        sizes="130px"
+        loading="lazy"
       />
       {children}
     </div>
