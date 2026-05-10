@@ -23,6 +23,19 @@ export const metadata: Metadata = {
     "entrepreneurship",
     "Atal Innovation Mission",
   ],
+  openGraph: {
+    title: "ACIC-BMU Foundation | Innovating Ideas, Transforming Ventures",
+    description:
+      "Empowering innovators from students to women entrepreneurs across India through incubation, mentorship, and community programs.",
+    siteName: "ACIC-BMU Foundation",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ACIC-BMU Foundation",
+    description:
+      "Innovating Ideas, Transforming Ventures — 110+ startups supported, 500+ women empowered.",
+  },
 };
 
 export default function RootLayout({
