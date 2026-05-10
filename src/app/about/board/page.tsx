@@ -42,7 +42,7 @@ const boardMembers = [
   {
     name: "Mr Ravi Pahuja",
     designation: "CEO, Raman Kant Munjal Foundation",
-    photo: "/images/board/ravi-pahuja.jfif",
+    photo: "/images/board/ravi-pahuja.jpg",
     linkedin: "#",
     imageClass: "",
   },

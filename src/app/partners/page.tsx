@@ -132,7 +132,7 @@ export default function PartnersPage() {
           key={category.title}
           className={idx % 2 === 0 ? "py-10 lg:py-20 bg-white" : "py-10 lg:py-20 bg-section-alt"}
         >
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

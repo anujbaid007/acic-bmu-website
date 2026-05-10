@@ -758,7 +758,7 @@ export default function HomePage() {
           <div className="flex animate-scroll-left">
             {[...allPartners, ...allPartners].map((src, i) => (
               <div key={i} className="flex-shrink-0 mx-8 flex items-center justify-center">
-                <Image src={src} alt="Partner" width={120} height={60} className="h-16 w-36 object-contain grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" />
+                <Image src={src} alt="Partner" width={180} height={80} className="h-20 w-44 object-contain grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" />
               </div>
             ))}
           </div>
