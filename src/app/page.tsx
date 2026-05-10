@@ -498,9 +498,9 @@ export default function HomePage() {
         </div>
 
         {/* Main content */}
-        <div className="bg-gradient-to-br from-white via-blue-50/50 to-white py-16 lg:py-20">
+        <div className="bg-gradient-to-br from-white via-blue-50/50 to-white py-10 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               {/* Left — text content */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -687,7 +687,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground"><span className="relative inline-block">Startups<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span> We&apos;ve Nurtured</h2>
             <p className="mt-4 text-lg leading-relaxed text-text-muted">From idea to market — our incubated startups are solving real-world problems across healthcare, climate tech, mobility, and more.</p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {startups.map((startup, i) => (
               <motion.div key={startup.name} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="group">
                 <div className="bg-section-alt rounded-2xl p-6 h-full flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20">
@@ -709,7 +709,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== TESTIMONIALS ========== */}
-      <section className="py-24 bg-gradient-to-b from-section-alt to-white overflow-hidden">
+      <section className="py-12 lg:py-24 bg-gradient-to-b from-section-alt to-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="Testimonials" title="Voices from Our Ecosystem" description="Hear from the startups, entrepreneurs, and changemakers who are part of the ACIC-BMU journey." />
         </div>
@@ -721,7 +721,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== EVENTS ========== */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="Events" title="Shaping the Future, One Event at a Time" description="Hackathons, ideathons, bootcamps, and more — our events bring innovators together to solve real problems." />
           <div className="grid md:grid-cols-3 gap-8">
@@ -748,7 +748,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== PARTNERS SLIDER ========== */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="Our Network" title="Partners & Collaborators" description="Backed by leading investors, government bodies, corporate partners, and service providers." />
         </div>
@@ -771,9 +771,9 @@ export default function HomePage() {
       </section>
 
       {/* ========== INFRASTRUCTURE ========== */}
-      <section className="py-24 bg-gradient-to-b from-white to-section-alt">
+      <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">Infrastructure</span>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-6">
@@ -803,7 +803,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== CTA ========== */}
-      <section className="pt-24 pb-8 bg-[#1a1a2e] text-white relative">
+      <section className="pt-12 pb-8 lg:pt-24 bg-[#1a1a2e] text-white relative">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to Turn Your Idea Into a Venture?</h2>
