@@ -12,7 +12,7 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 };
 
 export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
-  const totalRows = Math.ceil(logos.length / 4);
+  const desktopRows = Math.ceil(logos.length / 4);
 
   return (
     <div
@@ -25,42 +25,55 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
       <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-full border-t" />
 
       {logos.map((logo, i) => {
-        const rowIndex = Math.floor(i / 4);
-        const colInRow = i % 4;
-        const colInMobileRow = i % 2;
-        const mobileRowIndex = Math.floor(i / 2);
+        const dRow = Math.floor(i / 4);
+        const dCol = i % 4;
+        const mRow = Math.floor(i / 2);
+        const mCol = i % 2;
         const totalMobileRows = Math.ceil(logos.length / 2);
 
-        // Alternating bg pattern (checkerboard)
-        const isEvenRow = rowIndex % 2 === 0;
-        const hasBg = isEvenRow ? colInRow % 2 === 0 : colInRow % 2 === 1;
+        const isLastDesktopRow = dRow === desktopRows - 1;
+        const isLastMobileRow = mRow === totalMobileRows - 1;
 
-        const isLastDesktopRow = rowIndex === totalRows - 1;
-        const isLastMobileRow = mobileRowIndex === totalMobileRows - 1;
+        // Checkerboard: (row + col) % 2 === 0
+        const desktopBg = (dRow + dCol) % 2 === 0;
+
+        // Border right: on mobile every left col, on desktop every col except last in row
+        const hasMobileRightBorder = mCol === 0;
+        const hasDesktopRightBorder = dCol < 3;
 
         return (
-          <LogoCard
+          <div
             key={i}
             className={cn(
-              "relative",
-              // Right borders
-              colInMobileRow === 0 && "border-r",
-              // Bottom borders: always on mobile unless last mobile row, on desktop unless last desktop row
+              "relative flex items-center justify-center px-4 py-8 md:p-8",
+              // Background
+              desktopBg ? "bg-secondary/40" : "bg-background",
+              // Right border
+              hasMobileRightBorder && "border-r",
+              !hasMobileRightBorder && hasDesktopRightBorder && "md:border-r",
+              // Bottom border
               !isLastMobileRow && "border-b",
               isLastMobileRow && !isLastDesktopRow && "md:border-b",
-              // Alternating background
-              hasBg && "bg-secondary"
             )}
-            logo={logo}
           >
-            {/* Plus icons at grid intersections */}
-            {colInRow === 0 && !isLastDesktopRow && (
+            <Image
+              alt={logo.alt}
+              className="pointer-events-none h-8 w-auto max-w-[100px] select-none object-contain md:h-10 md:max-w-[140px]"
+              height={40}
+              src={logo.src}
+              width={140}
+              sizes="140px"
+              loading="lazy"
+            />
+
+            {/* Plus icons at row intersections */}
+            {dCol === 0 && !isLastDesktopRow && (
               <PlusIcon
                 className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6 text-muted-foreground/40"
                 strokeWidth={1}
               />
             )}
-            {colInRow === 2 && !isLastDesktopRow && (
+            {dCol === 2 && !isLastDesktopRow && (
               <>
                 <PlusIcon
                   className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6 hidden md:block text-muted-foreground/40"
@@ -72,38 +85,11 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
                 />
               </>
             )}
-          </LogoCard>
+          </div>
         );
       })}
 
       <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-full border-b" />
-    </div>
-  );
-}
-
-type LogoCardProps = React.ComponentProps<"div"> & {
-  logo: Logo;
-};
-
-function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
-  return (
-    <div
-      className={cn(
-        "flex items-center justify-center bg-background px-4 py-8 md:p-8",
-        className
-      )}
-      {...props}
-    >
-      <Image
-        alt={logo.alt}
-        className="pointer-events-none h-8 w-auto max-w-[100px] select-none object-contain md:h-10 md:max-w-[140px]"
-        height={40}
-        src={logo.src}
-        width={140}
-        sizes="140px"
-        loading="lazy"
-      />
-      {children}
     </div>
   );
 }
