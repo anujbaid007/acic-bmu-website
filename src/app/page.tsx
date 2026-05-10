@@ -216,7 +216,7 @@ function InnovatorsBanner() {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Parallax heading layer */}
         <motion.div style={{ y: headingY }}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight uppercase" style={{ fontVariant: "small-caps" }}>
+          <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight uppercase" style={{ fontVariant: "small-caps" }}>
             {bannerWords.map((word, i) => (
               <motion.span
                 key={i}
@@ -291,12 +291,12 @@ export default function HomePage() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                <span className="text-sm font-medium text-primary">
+                <span className="text-[11px] sm:text-sm font-medium text-primary whitespace-nowrap">
                   Supported by Atal Innovation Mission, NITI Aayog
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
                 Innovating Ideas,{" "}
                 <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">Transforming</span>{" "}
                 <span className="relative inline-block">
@@ -307,27 +307,27 @@ export default function HomePage() {
                 </span>
               </h1>
 
-              <p className="mt-6 text-lg text-text-muted leading-relaxed max-w-lg">
+              <p className="mt-4 sm:mt-6 text-sm sm:text-lg text-text-muted leading-relaxed max-w-lg">
                 We provide resources, mentorship, and community to transform
                 ideas into market-ready ventures — empowering innovators from
                 students to women entrepreneurs across India.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/programs" className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
+              <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
+                <Link href="/programs" className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 text-sm sm:text-base bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
                   Explore Programs <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-foreground/15 text-foreground font-semibold rounded-full hover:border-primary hover:text-primary transition-colors">
+                <Link href="/about" className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 text-sm sm:text-base border-2 border-foreground/15 text-foreground font-semibold rounded-full hover:border-primary hover:text-primary transition-colors">
                   Learn More
                 </Link>
               </div>
 
               {/* Supported By Logos */}
-              <div className="mt-10 pt-8 border-t border-border/50">
+              <div className="mt-6 sm:mt-10 pt-6 sm:pt-8 border-t border-border/50">
                 <p className="text-xs font-medium text-text-muted uppercase tracking-widest mb-4">Supported By</p>
-                <div className="flex flex-wrap items-center gap-6">
-                  <Image src="/images/logos/niti-aayog.webp" alt="NITI Aayog" width={200} height={64} className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity mix-blend-multiply" />
-                  <Image src="/images/logos/acic-bmu-propel.webp" alt="ACIC BMU Propel" width={260} height={80} className="h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity -ml-3" />
+                <div className="flex items-center justify-start gap-4 sm:gap-6">
+                  <Image src="/images/logos/niti-aayog.webp" alt="NITI Aayog" width={200} height={64} className="h-10 sm:h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity mix-blend-multiply" />
+                  <Image src="/images/logos/acic-bmu-propel.webp" alt="ACIC BMU Propel" width={260} height={80} className="h-12 sm:h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity -ml-3" />
                 </div>
               </div>
             </motion.div>
@@ -404,7 +404,7 @@ export default function HomePage() {
               <div className="flex items-center gap-3 mb-4">
                 <Image src="/images/logos/propel-logo.png" alt="Propel" width={100} height={32} className="h-8 w-auto brightness-0 invert" />
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 Propel <span className="text-[#c9a84c]">Pitchfest</span>
               </h2>
               <div className="flex items-center gap-3 mt-3">
@@ -486,14 +486,14 @@ export default function HomePage() {
       <section className="relative py-0 overflow-hidden">
         {/* Top blue banner bar */}
         <div className="bg-gradient-to-r from-[#1a237e] via-[#1565c0] to-[#1a237e] py-4">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-            <Image src="/images/logos/acic-logo.png" alt="ACIC-BMU" width={140} height={44} className="h-10 w-auto brightness-0 invert" />
-            <div className="w-px h-8 bg-white/30 hidden sm:block" />
-            <Image src="/images/logos/bmu-logo.png" alt="BMU" width={140} height={44} className="h-10 w-auto brightness-0 invert mix-blend-screen" />
-            <div className="w-px h-8 bg-white/30 hidden sm:block" />
-            <Image src="/images/logos/propel-logo.png" alt="Propel" width={140} height={44} className="h-10 w-auto brightness-0 invert" />
-            <div className="w-px h-8 bg-white/30 hidden sm:block" />
-            <Image src="/images/partners/enablers/atal-innovation-mission.jpg" alt="AIM" width={140} height={44} className="h-10 w-auto brightness-0 invert mix-blend-screen" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-nowrap items-center justify-center gap-3 sm:gap-10">
+            <Image src="/images/logos/acic-logo.png" alt="ACIC-BMU" width={140} height={44} className="h-7 sm:h-10 w-auto brightness-0 invert shrink-0" />
+            <div className="w-px h-6 sm:h-8 bg-white/30 shrink-0" />
+            <div className="bg-white/10 rounded-md px-2 py-0.5 sm:px-3 sm:py-1 shrink-0"><Image src="/images/logos/bmu-logo.png" alt="BMU" width={140} height={44} className="h-7 sm:h-10 w-auto" /></div>
+            <div className="w-px h-6 sm:h-8 bg-white/30 shrink-0" />
+            <Image src="/images/logos/propel-logo.png" alt="Propel" width={140} height={44} className="h-7 sm:h-10 w-auto brightness-0 invert shrink-0" />
+            <div className="w-px h-6 sm:h-8 bg-white/30 shrink-0" />
+            <div className="bg-white/10 rounded-md px-2 py-0.5 sm:px-3 sm:py-1 shrink-0"><Image src="/images/partners/enablers/atal-innovation-mission.jpg" alt="AIM" width={140} height={44} className="h-7 sm:h-10 w-auto" /></div>
           </div>
         </div>
 
@@ -508,12 +508,12 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-[#1a237e] leading-tight uppercase">
+                <h2 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-[#1a237e] leading-tight uppercase">
                   ACIC-BMU Invites You to Apply for{" "}
                   <span className="text-primary">Startup India Seed Fund</span>
                 </h2>
                 <div className="mt-3 w-16 h-1 bg-[#1a237e]" />
-                <p className="mt-5 text-text-muted leading-relaxed">
+                <p className="mt-4 sm:mt-5 text-sm sm:text-base text-text-muted leading-relaxed">
                   Startup India Seed Fund Scheme (SISFS) provides financial assistance to startups for proof of concept, prototype development, product trials, market-entry, and commercialization.
                 </p>
 
@@ -589,7 +589,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== ABOUT SNIPPET ========== */}
-      <section className="py-12 lg:py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -607,10 +607,10 @@ export default function HomePage() {
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">About Us</span>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight mb-4 sm:mb-6">
                 Nurturing Entrepreneurs Who Create <span className="relative inline-block text-primary">Impact<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span>
               </h2>
-              <p className="text-text-muted leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-text-muted leading-relaxed mb-4 sm:mb-6">
                 ACIC-BMU Foundation has been set up by BML Munjal University along with the support of Atal Innovation Mission (AIM), NITI Aayog to promote and support innovation and entrepreneurship. We focus on encouraging innovators within the university and the community around it.
               </p>
               <div className="space-y-4 mb-8">
@@ -724,16 +724,16 @@ export default function HomePage() {
       <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="Events" title="Shaping the Future, One Event at a Time" description="Hackathons, ideathons, bootcamps, and more — our events bring innovators together to solve real problems." />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {events.map((event, i) => (
               <motion.div key={event.title} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-border/50 h-full">
-                  <div className="relative h-48 overflow-hidden">
-                    <Image src={event.image} alt={event.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-bottom hover:scale-105 transition-transform duration-500" />
+                <div className="bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-border/50 h-full">
+                  <div className="relative h-28 md:h-48 overflow-hidden">
+                    <Image src={event.image} alt={event.title} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover object-bottom hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-foreground mb-2">{event.title}</h3>
-                    <p className="text-sm text-text-muted leading-relaxed">{event.description}</p>
+                  <div className="p-3 md:p-6">
+                    <h3 className="text-sm md:text-lg font-bold text-foreground mb-1 md:mb-2">{event.title}</h3>
+                    <p className="text-xs md:text-sm text-text-muted leading-relaxed line-clamp-3 md:line-clamp-none">{event.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -753,12 +753,12 @@ export default function HomePage() {
           <SectionHeading label="Our Network" title="Partners & Collaborators" description="Backed by leading investors, government bodies, corporate partners, and service providers." />
         </div>
         <div className="relative overflow-hidden mt-8">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-white to-transparent z-10" />
           <div className="flex animate-scroll-left">
             {[...allPartners, ...allPartners].map((src, i) => (
-              <div key={i} className="flex-shrink-0 mx-8 flex items-center justify-center">
-                <Image src={src} alt="Partner" width={180} height={80} className="h-20 w-44 object-contain grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" />
+              <div key={i} className="flex-shrink-0 mx-3 sm:mx-8 flex items-center justify-center">
+                <Image src={src} alt="Partner" width={180} height={80} className="h-10 w-24 sm:h-20 sm:w-44 object-contain grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" />
               </div>
             ))}
           </div>
@@ -771,15 +771,15 @@ export default function HomePage() {
       </section>
 
       {/* ========== INFRASTRUCTURE ========== */}
-      <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-section-alt">
+      <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-section-alt overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">Infrastructure</span>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-6">
+              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-4 sm:mb-6">
                 World-Class Facilities for <span className="relative inline-block text-primary">Innovation<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span>
               </h2>
-              <p className="text-text-muted leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-text-muted leading-relaxed mb-4 sm:mb-6">
                 The incubator hub at BML Munjal University campus provides contemporary facilities required by innovators and startups. From co-working spaces to prototyping labs, our infrastructure is designed to accelerate your journey.
               </p>
               <ul className="space-y-3 text-text-muted">
@@ -806,15 +806,15 @@ export default function HomePage() {
       <section className="pt-12 pb-8 lg:pt-24 bg-[#1a1a2e] text-white relative">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to Turn Your Idea Into a Venture?</h2>
-            <p className="text-lg text-white/60 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Ready to Turn Your Idea Into a Venture?</h2>
+            <p className="text-sm sm:text-lg text-white/60 mb-6 sm:mb-8 max-w-2xl mx-auto">
               Whether you&apos;re a student with a bold idea, a woman entrepreneur looking to scale, or an innovator seeking incubation support — we&apos;re here to help.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
                 Get In Touch <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/programs" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-colors">
+              <Link href="/programs" className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base border-2 border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-colors">
                 Explore Programs
               </Link>
             </div>

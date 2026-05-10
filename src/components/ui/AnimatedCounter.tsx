@@ -49,7 +49,7 @@ export default function AnimatedCounter({
       transition={{ duration: 0.5 }}
       className="text-center"
     >
-      <div className={`text-4xl sm:text-5xl font-bold ${light ? "text-white" : "text-primary"}`}>
+      <div className={`text-3xl sm:text-5xl font-bold whitespace-nowrap ${light ? "text-white" : "text-primary"}`}>
         {prefix}
         {count}
         {suffix}
