@@ -279,18 +279,31 @@ function InnovatorsBanner() {
 
 function StartupScrollSection({ startups }: { startups: { name: string; description: string; logo: string }[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const totalCards = startups.length + 1; // +1 for CTA card
-  const [activeCard, setActiveCard] = useState(-1);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const activeCardRef = useRef(0);
+  const [activeCard, setActiveCard] = useState(0);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
   const x = useTransform(scrollYProgress, [0, 1], ["50vw", "-140vw"]);
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Map scroll progress to active card index
-    const cardIndex = Math.round(latest * (totalCards - 1));
-    setActiveCard(cardIndex);
+  useMotionValueEvent(scrollYProgress, "change", () => {
+    const viewportCenter = window.innerWidth / 2;
+    const centerLineOffset = 16;
+    const cardIndex = cardRefs.current.reduce((activeIndex, card, index) => {
+      if (!card) return activeIndex;
+
+      const { left, width } = card.getBoundingClientRect();
+      const cardCenter = left + width / 2;
+
+      return cardCenter <= viewportCenter + centerLineOffset ? index : activeIndex;
+    }, 0);
+
+    if (cardIndex !== activeCardRef.current) {
+      activeCardRef.current = cardIndex;
+      setActiveCard(cardIndex);
+    }
   });
 
   return (
@@ -324,6 +337,9 @@ function StartupScrollSection({ startups }: { startups: { name: string; descript
               return (
                 <div
                   key={startup.name}
+                  ref={(node) => {
+                    cardRefs.current[i] = node;
+                  }}
                   className={`min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative bg-section-alt border transition-all duration-500 flex flex-col items-center justify-center text-center p-8 ${
                     isActive ? "border-primary/30 shadow-[0_0_50px_rgba(230,126,34,0.2)] scale-[1.02]" : "border-border/50 scale-100"
                   }`}
