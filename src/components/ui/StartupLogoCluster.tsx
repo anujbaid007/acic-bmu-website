@@ -129,45 +129,48 @@ export default function StartupLogoCluster() {
           const logo = allLogos[logoIdx];
 
           return (
-            <TiltCard
+            <a
               key={cellIdx}
-              className="relative aspect-square cursor-pointer"
+              href={logo.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${logo.name} website in a new tab`}
+              className="group block relative aspect-square rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
             >
-              <AnimatePresence mode="wait">
-                <motion.a
-                  key={`${cellIdx}-${logoIdx}`}
-                  href={logo.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${logo.name} website in a new tab`}
-                  initial={{ opacity: 0, scale: 0.85, rotateY: -60 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                  exit={{ opacity: 0, scale: 0.85, rotateY: 60 }}
-                  transition={{ duration: 0.45, ease: "easeInOut" }}
-                  className="absolute inset-0 z-20 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-border/30 p-5 flex flex-col items-center justify-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-                >
-                  <GlowingEffect
-                    spread={40}
-                    glow
-                    proximity={64}
-                    disabled={false}
-                    borderWidth={2}
-                  />
-                  <div className="relative z-10 w-full flex-1 flex items-center justify-center min-h-0">
-                    <Image
-                      src={logo.src}
-                      alt={logo.name}
-                      width={logo.large ? 180 : 100}
-                      height={logo.large ? 180 : 100}
-                      className={`object-contain ${logo.large ? "w-full h-full" : "w-auto h-auto max-w-[80%] max-h-[80%]"}`}
+              <TiltCard className="relative h-full w-full cursor-pointer">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`${cellIdx}-${logoIdx}`}
+                    initial={{ opacity: 0, scale: 0.85, rotateY: -60 }}
+                    animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                    exit={{ opacity: 0, scale: 0.85, rotateY: 60 }}
+                    transition={{ duration: 0.45, ease: "easeInOut" }}
+                    className="absolute inset-0 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-border/30 p-5 flex flex-col items-center justify-center gap-3 transition-all duration-300 group-hover:border-primary/35 group-hover:shadow-[0_12px_34px_rgba(230,126,34,0.20)]"
+                  >
+                    <GlowingEffect
+                      spread={40}
+                      glow
+                      proximity={64}
+                      disabled={false}
+                      borderWidth={2}
                     />
-                  </div>
-                  <p className="relative z-10 text-xs font-semibold text-foreground/60 text-center leading-tight truncate w-full shrink-0">
-                    {logo.name}
-                  </p>
-                </motion.a>
-              </AnimatePresence>
-            </TiltCard>
+                    <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition-all duration-300 group-hover:ring-primary/20" />
+                    <div className="relative z-10 w-full flex-1 flex items-center justify-center min-h-0">
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        width={logo.large ? 180 : 100}
+                        height={logo.large ? 180 : 100}
+                        className={`object-contain ${logo.large ? "w-full h-full" : "w-auto h-auto max-w-[80%] max-h-[80%]"}`}
+                      />
+                    </div>
+                    <p className="relative z-10 text-xs font-semibold text-foreground/60 text-center leading-tight truncate w-full shrink-0">
+                      {logo.name}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </TiltCard>
+            </a>
           );
         })}
       </div>
