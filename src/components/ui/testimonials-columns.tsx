@@ -36,7 +36,7 @@ export const TestimonialsColumn = (props: {
                     alt={name}
                     loading="lazy"
                     decoding="async"
-                    className="h-10 w-10 rounded-full object-cover ring-2 ring-primary/20"
+                    className="h-10 w-10 rounded-full object-contain bg-white p-1 ring-2 ring-primary/20"
                   />
                   <div className="flex flex-col">
                     <div className="font-semibold text-sm tracking-tight leading-5">

@@ -25,7 +25,7 @@ import StartupLogoCluster from "@/components/ui/StartupLogoCluster";
 const testimonials = [
   {
     text: "ACIC-BMU's incubation support helped us scale our lithium-ion recycling technology from lab to market. The mentorship and industry connections were invaluable.",
-    image: "/images/startups/agaamin-technologies-private-limited.png",
+    image: "/images/startups/batx-energies.svg",
     name: "BatX Energies",
     role: "Incubated Startup",
   },
