@@ -96,31 +96,37 @@ const startups = [
     name: "BatX Energies",
     description: "Lithium-ion battery recycling with Zero Waste-Zero Emission technology",
     logo: "/images/startups/batx-energies.svg",
+    website: "https://batxenergies.com/",
   },
   {
     name: "Vayuguard Climate Tech",
     description: "Advanced air purification solutions for healthier environments",
     logo: "/images/startups/vayuguard-climate-tech-private-limited.svg",
+    website: "https://vayuguard.com/",
   },
   {
     name: "Femzo India",
     description: "Electric mobility solutions for sustainable transportation",
     logo: "/images/startups/femzo-india-private-limited.jpg",
+    website: "https://feryrides.co.in/",
   },
   {
     name: "Kagaku Technology",
     description: "Innovative technology solutions for modern challenges",
     logo: "/images/startups/kagaku-technology-private-limited.webp",
+    website: "https://scitechindustries.com/",
   },
   {
     name: "Inconel Technologies",
     description: "IoT-based real-time safety compliance monitoring systems",
     logo: "/images/startups/inconel-technologies-private-limited.png",
+    website: "https://inconel.tech/",
   },
   {
     name: "Itx Care (Dr at Home)",
     description: "Healthcare solutions bringing doctors to your doorstep",
     logo: "/images/startups/itx-care-private-limited.png",
+    website: "https://www.doctorathome.in/",
   },
 ];
 
@@ -277,9 +283,9 @@ function InnovatorsBanner() {
   );
 }
 
-function StartupScrollSection({ startups }: { startups: { name: string; description: string; logo: string }[] }) {
+function StartupScrollSection({ startups }: { startups: { name: string; description: string; logo: string; website: string }[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const activeCardRef = useRef(0);
   const [activeCard, setActiveCard] = useState(0);
   const { scrollYProgress } = useScroll({
@@ -340,12 +346,16 @@ function StartupScrollSection({ startups }: { startups: { name: string; descript
             {startups.map((startup, i) => {
               const isActive = activeCard === i;
               return (
-                <div
+                <a
                   key={startup.name}
+                  href={startup.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${startup.name} website in a new tab`}
                   ref={(node) => {
                     cardRefs.current[i] = node;
                   }}
-                  className={`min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative bg-section-alt border transition-all duration-300 ease-out flex flex-col items-center justify-center text-center p-8 ${
+                  className={`min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative bg-section-alt border transition-all duration-300 ease-out flex flex-col items-center justify-center text-center p-8 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
                     isActive ? "border-primary/45 shadow-[0_18px_45px_rgba(17,24,39,0.10)] scale-[1.015]" : "border-border/50 shadow-none scale-100"
                   }`}
                 >
@@ -356,7 +366,7 @@ function StartupScrollSection({ startups }: { startups: { name: string; descript
                   </div>
                   <h4 className={`text-lg font-bold transition-colors duration-300 mb-2 ${isActive ? "text-primary" : "text-foreground"}`}>{startup.name}</h4>
                   <p className="text-sm text-text-muted leading-relaxed max-w-xs">{startup.description}</p>
-                </div>
+                </a>
               );
             })}
             {/* CTA card */}
