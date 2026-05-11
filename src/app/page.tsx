@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -83,7 +83,7 @@ const programs = [
   {
     title: "Mera Business",
     description:
-      "Empowering women in rural and peri-urban areas to launch micro-businesses through structured training, mentorship, and financial support.",
+      "Empowering women in rural and peri-urban areas to launch micro-businesses through structured training, mentorship, and financial support — building self-reliance at the grassroots.",
     icon: Users,
     href: "/programs/mera-business",
     image: "/images/programs/mera-business/hero.jpg",
@@ -177,23 +177,29 @@ const bannerWords = "We Are Open to Meet Innovators / Startups and Help Them Suc
 
 function InnovatorsBanner() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  // Parallax layers at different speeds
-  const headingY = useTransform(scrollYProgress, [0, 1], [80, -80]);
-  const subtextY = useTransform(scrollYProgress, [0, 1], [50, -50]);
-  const ctaY = useTransform(scrollYProgress, [0, 1], [30, -30]);
-  const orb1Y = useTransform(scrollYProgress, [0, 1], [120, -120]);
-  const orb2Y = useTransform(scrollYProgress, [0, 1], [-80, 80]);
-  const orb1X = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-  const orb2X = useTransform(scrollYProgress, [0, 1], ["15%", "-15%"]);
-  const gridY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  // Parallax layers — reduced on mobile
+  const headingY = useTransform(scrollYProgress, [0, 1], isMobile ? [15, -15] : [80, -80]);
+  const subtextY = useTransform(scrollYProgress, [0, 1], isMobile ? [8, -8] : [50, -50]);
+  const ctaY = useTransform(scrollYProgress, [0, 1], isMobile ? [5, -5] : [30, -30]);
+  const orb1Y = useTransform(scrollYProgress, [0, 1], isMobile ? [20, -20] : [120, -120]);
+  const orb2Y = useTransform(scrollYProgress, [0, 1], isMobile ? [-15, 15] : [-80, 80]);
+  const orb1X = useTransform(scrollYProgress, [0, 1], isMobile ? ["-5%", "5%"] : ["-20%", "20%"]);
+  const orb2X = useTransform(scrollYProgress, [0, 1], isMobile ? ["5%", "-5%"] : ["15%", "-15%"]);
+  const gridY = useTransform(scrollYProgress, [0, 1], isMobile ? [0, -10] : [0, -40]);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#1a1a2e] py-14 lg:py-36">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#1a1a2e] py-10 sm:py-14 lg:py-36">
       {/* Parallax background orbs — big visible glows */}
       <motion.div style={{ y: orb1Y, x: orb1X }} className="absolute -top-32 right-1/4 w-[700px] h-[700px] bg-gradient-to-bl from-primary/20 via-primary/10 to-transparent rounded-full blur-3xl pointer-events-none" />
       <motion.div style={{ y: orb2Y, x: orb2X }} className="absolute -bottom-32 left-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-[#c9a84c]/15 via-[#c9a84c]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -216,7 +222,7 @@ function InnovatorsBanner() {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Parallax heading layer */}
         <motion.div style={{ y: headingY }}>
-          <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight uppercase" style={{ fontVariant: "small-caps" }}>
+          <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
             {bannerWords.map((word, i) => (
               <motion.span
                 key={i}
@@ -243,7 +249,7 @@ function InnovatorsBanner() {
 
         {/* Parallax subtext layer — moves slower */}
         <motion.p
-          className="mt-6 text-lg text-white/50 max-w-2xl mx-auto"
+          className="mt-4 sm:mt-6 text-sm sm:text-lg text-white/50 max-w-2xl mx-auto"
           style={{ y: subtextY }}
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -262,7 +268,7 @@ function InnovatorsBanner() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 1 }}
         >
-          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
+          <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
             Get in Touch <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
@@ -376,59 +382,59 @@ export default function HomePage() {
   return (
     <>
       {/* ========== HERO ========== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-section-alt to-primary/5 min-h-[70vh] lg:min-h-screen flex items-center pt-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-section-alt to-primary/5 min-h-svh sm:min-h-screen flex items-center pt-20 sm:pt-24">
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#e67e22" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-20">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 bg-primary/10 rounded-full mb-5 sm:mb-6">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 <span className="text-[11px] sm:text-sm font-medium text-primary whitespace-nowrap">
                   Supported by Atal Innovation Mission, NITI Aayog
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+              <h1 className="text-[2.1rem] leading-[1.15] sm:text-5xl lg:text-6xl font-bold sm:leading-[1.1] tracking-tight">
                 Innovating Ideas,{" "}
                 <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">Transforming</span>{" "}
                 <span className="relative inline-block">
                   Ventures
-                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                  <svg className="absolute -bottom-1.5 sm:-bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
                     <path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" />
                   </svg>
                 </span>
               </h1>
 
-              <p className="mt-4 sm:mt-6 text-sm sm:text-lg text-text-muted leading-relaxed max-w-lg">
+              <p className="mt-8 sm:mt-6 text-[15px] leading-relaxed sm:text-lg text-text-muted max-w-lg">
                 We provide resources, mentorship, and community to transform
                 ideas into market-ready ventures — empowering innovators from
                 students to women entrepreneurs across India.
               </p>
 
-              <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
-                <Link href="/programs" className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 text-sm sm:text-base bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
+              <div className="mt-10 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
+                <Link href="/programs" className="inline-flex items-center gap-2 px-6 py-3 sm:px-7 sm:py-3.5 text-sm sm:text-base bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
                   Explore Programs <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/about" className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 text-sm sm:text-base border-2 border-foreground/15 text-foreground font-semibold rounded-full hover:border-primary hover:text-primary transition-colors">
+                <Link href="/about" className="inline-flex items-center gap-2 px-6 py-3 sm:px-7 sm:py-3.5 text-sm sm:text-base border-2 border-foreground/15 text-foreground font-semibold rounded-full hover:border-primary hover:text-primary transition-colors">
                   Learn More
                 </Link>
               </div>
 
               {/* Supported By Logos */}
-              <div className="mt-6 sm:mt-10 pt-6 sm:pt-8 border-t border-border/50">
-                <p className="text-xs font-medium text-text-muted uppercase tracking-widest mb-4">Supported By</p>
-                <div className="flex items-center justify-start gap-4 sm:gap-6">
-                  <Image src="/images/logos/niti-aayog.webp" alt="NITI Aayog" width={200} height={64} className="h-10 sm:h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity mix-blend-multiply" />
-                  <Image src="/images/logos/acic-bmu-propel.webp" alt="ACIC BMU Propel" width={260} height={80} className="h-12 sm:h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity -ml-3" />
+              <div className="mt-10 sm:mt-10 pt-6 sm:pt-8 border-t border-border/50">
+                <p className="text-[11px] sm:text-xs font-medium text-text-muted uppercase tracking-widest mb-4">Supported By</p>
+                <div className="flex items-center justify-start gap-5 sm:gap-6">
+                  <Image src="/images/logos/niti-aayog.webp" alt="NITI Aayog" width={200} height={64} className="h-12 sm:h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity mix-blend-multiply" />
+                  <Image src="/images/logos/acic-bmu-propel.webp" alt="ACIC BMU Propel" width={260} height={80} className="h-14 sm:h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
               </div>
             </motion.div>
@@ -505,14 +511,14 @@ export default function HomePage() {
               <div className="flex items-center gap-3 mb-4">
                 <Image src="/images/logos/propel-logo.png" alt="Propel" width={100} height={32} className="h-8 w-auto brightness-0 invert" />
               </div>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight">
                 Propel <span className="text-[#c9a84c]">Pitchfest</span>
               </h2>
-              <div className="flex items-center gap-3 mt-3">
-                <span className="text-lg text-white/60 font-light tracking-widest">&infin; Opportunities</span>
+              <div className="flex items-center gap-3 mt-2 sm:mt-3">
+                <span className="text-sm sm:text-lg text-white/60 font-light tracking-widest">&infin; Opportunities</span>
               </div>
 
-              <div className="mt-8 grid sm:grid-cols-2 gap-6">
+              <div className="mt-5 sm:mt-8 grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <h4 className="text-[#c9a84c] font-semibold text-sm uppercase tracking-wider mb-3">Six Focus Areas</h4>
                   <div className="flex flex-wrap gap-2">
@@ -546,7 +552,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
                 <h4 className="text-[#c9a84c] font-semibold text-sm uppercase tracking-wider mb-4">Funding Opportunities</h4>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
@@ -554,8 +560,8 @@ export default function HomePage() {
                       <span className="text-2xl font-bold text-[#c9a84c]">$1</span>
                     </div>
                     <div>
-                      <p className="text-white font-semibold">USD 1 Mn Fund Chest</p>
-                      <p className="text-white/50 text-sm">From top investors</p>
+                      <p className="text-sm sm:text-base text-white font-semibold">USD 1 Mn Fund Chest</p>
+                      <p className="text-white/50 text-xs sm:text-sm">From top investors</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -563,8 +569,8 @@ export default function HomePage() {
                       <span className="text-xl font-bold text-primary">&#8377;50L</span>
                     </div>
                     <div>
-                      <p className="text-white font-semibold">Upto &#8377;50 Lakhs</p>
-                      <p className="text-white/50 text-sm">Under Startup India Seed Fund (SISFS)</p>
+                      <p className="text-sm sm:text-base text-white font-semibold">Upto &#8377;50 Lakhs</p>
+                      <p className="text-white/50 text-xs sm:text-sm">Under Startup India Seed Fund (SISFS)</p>
                     </div>
                   </div>
                 </div>
@@ -595,14 +601,19 @@ export default function HomePage() {
                 { src: "/images/logos/propel-logo.png", alt: "Propel Incubator", cls: "h-5 sm:h-8" },
                 { src: "/images/partners/enablers/atal-innovation-mission.jpg", alt: "Atal Innovation Mission", cls: "h-5 sm:h-8" },
               ].map((logo, i) => (
-                <div key={i} className="flex-1 flex items-center justify-center bg-white rounded-lg h-10 sm:h-14 px-2 sm:px-4 overflow-hidden">
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={180}
-                    height={56}
-                    className={`${logo.cls} w-auto object-contain`}
-                  />
+                <div key={i} className="relative flex-1 h-10 sm:h-14 rounded-xl" style={{ padding: "2px" }}>
+                  <div className="absolute inset-0 rounded-xl overflow-hidden hidden sm:block">
+                    <div className="absolute inset-[-200%] animate-border-flow" style={{ background: "conic-gradient(from 0deg, #e67e22, #f0a04b, #ffffff, #c0651a, #2d6a4f, #e67e22)" }} />
+                  </div>
+                  <div className="relative flex items-center justify-center bg-white rounded-[10px] h-full px-2 sm:px-4">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={180}
+                      height={56}
+                      className={`${logo.cls} w-auto object-contain`}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -620,7 +631,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-[#1a237e] leading-tight uppercase">
+                <h2 className="text-xl sm:text-3xl lg:text-[2.75rem] font-extrabold tracking-tight text-[#1a237e] leading-tight uppercase">
                   ACIC-BMU Invites You to Apply for{" "}
                   <span className="text-primary">Startup India Seed Fund</span>
                 </h2>
@@ -630,37 +641,37 @@ export default function HomePage() {
                 </p>
 
                 {/* Seed fund callout */}
-                <div className="mt-8">
-                  <div className="inline-block px-5 py-2 bg-[#1a237e] text-white text-sm font-semibold rounded-full mb-4">
+                <div className="mt-5 sm:mt-8">
+                  <div className="inline-block px-4 py-1.5 sm:px-5 sm:py-2 bg-[#1a237e] text-white text-xs sm:text-sm font-semibold rounded-full mb-4">
                     Seed Fund to an eligible startup is:
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="flex gap-3 p-4 bg-blue-50 rounded-xl border border-blue-100">
-                      <div className="w-10 h-10 bg-[#1a237e] rounded-full flex items-center justify-center shrink-0">
-                        <CheckCircle2 className="w-5 h-5 text-white" />
+                    <div className="flex gap-3 p-3 sm:p-4 bg-blue-50 rounded-xl border border-blue-100">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#1a237e] rounded-full flex items-center justify-center shrink-0">
+                        <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#1a237e]">Up to Rs. 20 Lakhs</h4>
-                        <p className="text-xs text-text-muted mt-0.5">as grant for validation of Proof of Concept, or prototype development, or product trials.</p>
+                        <h4 className="text-sm sm:text-base font-bold text-[#1a237e]">Up to Rs. 20 Lakhs</h4>
+                        <p className="text-[11px] sm:text-xs text-text-muted mt-0.5">as grant for validation of Proof of Concept, or prototype development, or product trials.</p>
                       </div>
                     </div>
-                    <div className="flex gap-3 p-4 bg-blue-50 rounded-xl border border-blue-100">
-                      <div className="w-10 h-10 bg-[#1a237e] rounded-full flex items-center justify-center shrink-0">
-                        <CheckCircle2 className="w-5 h-5 text-white" />
+                    <div className="flex gap-3 p-3 sm:p-4 bg-blue-50 rounded-xl border border-blue-100">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#1a237e] rounded-full flex items-center justify-center shrink-0">
+                        <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-primary">Up to Rs. 50 Lakhs</h4>
-                        <p className="text-xs text-text-muted mt-0.5">of investment for market entry, commercialization, or scaling up through convertible debentures or debt-linked instruments.</p>
+                        <h4 className="text-sm sm:text-base font-bold text-primary">Up to Rs. 50 Lakhs</h4>
+                        <p className="text-[11px] sm:text-xs text-text-muted mt-0.5">of investment for market entry, commercialization, or scaling up through convertible debentures or debt-linked instruments.</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <a href="https://seedfund.startupindia.gov.in/home" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#1a237e] to-[#1565c0] text-white font-bold rounded-full hover:shadow-xl hover:shadow-blue-500/30 transition-all shadow-lg shadow-blue-500/20">
+                <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
+                  <a href="https://seedfund.startupindia.gov.in/home" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 text-sm sm:text-base bg-gradient-to-r from-[#1a237e] to-[#1565c0] text-white font-bold rounded-full hover:shadow-xl hover:shadow-blue-500/30 transition-all shadow-lg shadow-blue-500/20">
                     <Rocket className="w-4 h-4" /> Apply Now <ArrowRight className="w-4 h-4" />
                   </a>
-                  <a href="https://seedfund.startupindia.gov.in/about" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-[#1a237e]/20 text-[#1a237e] font-semibold rounded-full hover:border-[#1a237e] transition-colors">
+                  <a href="https://seedfund.startupindia.gov.in/about" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 text-sm sm:text-base border-2 border-[#1a237e]/20 text-[#1a237e] font-semibold rounded-full hover:border-[#1a237e] transition-colors">
                     Check Eligibility
                   </a>
                 </div>
@@ -707,12 +718,12 @@ export default function HomePage() {
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <div className="rounded-2xl overflow-hidden"><Image src="/images/events/hackathon.jpg" alt="Hackathon" width={300} height={400} className="w-full h-56 object-cover object-bottom" /></div>
-                  <div className="rounded-2xl overflow-hidden"><Image src="/images/events/fpae.jpg" alt="FPAE Program" width={300} height={250} className="w-full h-44 object-cover object-bottom" /></div>
+                  <div className="rounded-2xl overflow-hidden"><Image src="/images/events/hackathon.jpg" alt="Hackathon" width={300} height={400} className="w-full h-36 sm:h-56 object-cover object-bottom" /></div>
+                  <div className="rounded-2xl overflow-hidden"><Image src="/images/events/fpae.jpg" alt="FPAE Program" width={300} height={250} className="w-full h-28 sm:h-44 object-cover object-bottom" /></div>
                 </div>
-                <div className="space-y-4 pt-8">
-                  <div className="rounded-2xl overflow-hidden"><Image src="/images/events/ideathon.jpg" alt="Ideathon" width={300} height={250} className="w-full h-44 object-cover object-bottom" /></div>
-                  <div className="rounded-2xl overflow-hidden"><Image src="/images/events/entrepreneurship-game.jpg" alt="Entrepreneurship Workshop" width={300} height={400} className="w-full h-56 object-cover object-bottom" /></div>
+                <div className="space-y-4 pt-4 sm:pt-8">
+                  <div className="rounded-2xl overflow-hidden"><Image src="/images/events/ideathon.jpg" alt="Ideathon" width={300} height={250} className="w-full h-28 sm:h-44 object-cover object-bottom" /></div>
+                  <div className="rounded-2xl overflow-hidden"><Image src="/images/events/entrepreneurship-game.jpg" alt="Entrepreneurship Workshop" width={300} height={400} className="w-full h-36 sm:h-56 object-cover object-bottom" /></div>
                 </div>
               </div>
             </motion.div>
@@ -755,8 +766,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto text-center mb-12">
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">Our Programs</span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">Three Verticals, One <span className="relative inline-block">Mission<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span></h2>
-            <p className="mt-4 text-lg leading-relaxed text-text-muted">We drive impact through three focused verticals — supporting startups, empowering youth, and uplifting grassroots women entrepreneurs.</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">Three Verticals, One <span className="relative inline-block">Mission<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span></h2>
+            <p className="mt-4 text-sm sm:text-lg leading-relaxed text-text-muted">We drive impact through three focused verticals — supporting startups, empowering youth, and uplifting grassroots women entrepreneurs.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {programs.map((program, i) => (
@@ -868,7 +879,7 @@ export default function HomePage() {
               <p className="text-sm sm:text-base text-text-muted leading-relaxed mb-4 sm:mb-6">
                 The incubator hub at BML Munjal University campus provides contemporary facilities required by innovators and startups. From co-working spaces to prototyping labs, our infrastructure is designed to accelerate your journey.
               </p>
-              <ul className="space-y-3 text-text-muted">
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-text-muted">
                 {["Co-working spaces & private cabins", "Prototyping & testing labs", "Conference & meeting rooms", "High-speed internet & IT infrastructure", "Mentorship & networking zones"].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 bg-primary rounded-full" />
@@ -880,7 +891,7 @@ export default function HomePage() {
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="grid grid-cols-2 gap-4">
               {[6, 7, 8, 9].map((n) => (
                 <div key={n} className="rounded-2xl overflow-hidden shadow-md">
-                  <Image src={`/images/infrastructure/${n}.png`} alt={`Facility ${n}`} width={300} height={220} className="w-full h-44 object-cover object-bottom hover:scale-105 transition-transform duration-500" />
+                  <Image src={`/images/infrastructure/${n}.png`} alt={`Facility ${n}`} width={300} height={220} className="w-full h-32 sm:h-44 object-cover object-bottom hover:scale-105 transition-transform duration-500" />
                 </div>
               ))}
             </motion.div>

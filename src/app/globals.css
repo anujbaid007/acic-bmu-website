@@ -132,3 +132,12 @@ body {
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration, 20s) linear infinite;
 }
+
+@keyframes border-flow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-border-flow {
+  animation: border-flow 3s linear infinite;
+}

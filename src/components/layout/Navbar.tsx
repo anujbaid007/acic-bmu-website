@@ -70,7 +70,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-          isScrolled ? "w-[90%] max-w-5xl" : "w-[95%] max-w-6xl"
+          isScrolled ? "w-[92%] max-w-6xl" : "w-[97%] max-w-[78rem]"
         }`}
       >
         <div
@@ -78,7 +78,7 @@ export default function Navbar() {
             isScrolled ? "shadow-xl shadow-black/5" : ""
           }`}
         >
-          <div className="flex items-center justify-between px-5 py-2.5">
+          <div className="flex items-center justify-between px-6 py-4">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 shrink-0">
               <Image
@@ -100,7 +100,7 @@ export default function Navbar() {
                       onMouseEnter={() => setActiveDropdown(link.label)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-primary/5">
+                      <button className="flex items-center gap-1 px-3.5 py-2 text-[15px] font-medium text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-primary/5">
                         {link.label}
                         <motion.span
                           animate={{ rotate: activeDropdown === link.label ? 180 : 0 }}
@@ -143,7 +143,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="block px-3.5 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-primary/5"
+                      className="block px-3.5 py-2 text-[15px] font-medium text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-primary/5"
                     >
                       {link.label}
                     </Link>
