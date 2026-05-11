@@ -49,7 +49,7 @@ const testimonials = [
   },
   {
     text: "ACIC-BMU Foundation connected us with the right investors and industry partners at the right time. Their network is truly powerful.",
-    image: "/images/startups/femzo-india-private-limited.jpg",
+    image: "/images/startups/femzo-india-private-limited.png",
     name: "Femzo India",
     role: "Incubated Startup",
   },
@@ -107,7 +107,7 @@ const startups = [
   {
     name: "Femzo India",
     description: "Electric mobility solutions for sustainable transportation",
-    logo: "/images/startups/femzo-india-private-limited.jpg",
+    logo: "/images/startups/femzo-india-private-limited.png",
     website: "https://feryrides.co.in/",
   },
   {
