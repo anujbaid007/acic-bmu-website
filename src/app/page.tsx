@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -279,11 +279,19 @@ function InnovatorsBanner() {
 
 function StartupScrollSection({ startups }: { startups: { name: string; description: string; logo: string }[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const totalCards = startups.length + 1; // +1 for CTA card
+  const [activeCard, setActiveCard] = useState(-1);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
   const x = useTransform(scrollYProgress, [0, 1], ["50vw", "-140vw"]);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    // Map scroll progress to active card index
+    const cardIndex = Math.round(latest * (totalCards - 1));
+    setActiveCard(cardIndex);
+  });
 
   return (
     <section className="bg-white">
@@ -311,18 +319,26 @@ function StartupScrollSection({ startups }: { startups: { name: string; descript
 
           {/* Horizontal sliding cards */}
           <motion.div style={{ x }} className="flex gap-8 pl-[10vw]">
-            {startups.map((startup) => (
-              <div
-                key={startup.name}
-                className="min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative group bg-section-alt border border-border/50 hover:border-primary/20 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center p-8"
-              >
-                <div className="w-32 h-32 mb-5 flex items-center justify-center">
-                  <Image src={startup.logo} alt={startup.name} width={128} height={128} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300" />
+            {startups.map((startup, i) => {
+              const isActive = activeCard === i;
+              return (
+                <div
+                  key={startup.name}
+                  className={`min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative bg-section-alt border transition-all duration-500 flex flex-col items-center justify-center text-center p-8 ${
+                    isActive ? "border-primary/30 shadow-[0_0_50px_rgba(230,126,34,0.2)] scale-[1.02]" : "border-border/50 scale-100"
+                  }`}
+                >
+                  {/* Orange glow — active when card is centered */}
+                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/5 via-transparent to-primary/10 transition-opacity duration-500 pointer-events-none ${isActive ? "opacity-100" : "opacity-0"}`} />
+                  <div className={`absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-primary/25 rounded-full blur-3xl transition-opacity duration-500 pointer-events-none ${isActive ? "opacity-100" : "opacity-0"}`} />
+                  <div className="relative w-32 h-32 mb-5 flex items-center justify-center">
+                    <Image src={startup.logo} alt={startup.name} width={128} height={128} className={`w-full h-full object-contain mix-blend-multiply transition-transform duration-500 ${isActive ? "scale-110" : "scale-100"}`} />
+                  </div>
+                  <h4 className={`text-lg font-bold transition-colors duration-500 mb-2 ${isActive ? "text-primary" : "text-foreground"}`}>{startup.name}</h4>
+                  <p className="text-sm text-text-muted leading-relaxed max-w-xs">{startup.description}</p>
                 </div>
-                <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors mb-2">{startup.name}</h4>
-                <p className="text-sm text-text-muted leading-relaxed max-w-xs">{startup.description}</p>
-              </div>
-            ))}
+              );
+            })}
             {/* CTA card */}
             <div className="min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative flex flex-col items-center justify-center text-center p-8 bg-primary/5 border-2 border-dashed border-primary/30">
               <h4 className="text-xl font-bold text-foreground mb-2">And Many More...</h4>
