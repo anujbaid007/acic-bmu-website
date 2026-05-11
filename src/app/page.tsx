@@ -290,19 +290,24 @@ function StartupScrollSection({ startups }: { startups: { name: string; descript
 
   useMotionValueEvent(scrollYProgress, "change", () => {
     const viewportCenter = window.innerWidth / 2;
-    const centerLineOffset = 16;
-    const cardIndex = cardRefs.current.reduce((activeIndex, card, index) => {
-      if (!card) return activeIndex;
+    let closestIndex = activeCardRef.current;
+    let closestDistance = Number.POSITIVE_INFINITY;
 
+    cardRefs.current.forEach((card, index) => {
+      if (!card) return;
       const { left, width } = card.getBoundingClientRect();
       const cardCenter = left + width / 2;
+      const distanceFromCenter = Math.abs(cardCenter - viewportCenter);
 
-      return cardCenter <= viewportCenter + centerLineOffset ? index : activeIndex;
-    }, 0);
+      if (distanceFromCenter < closestDistance) {
+        closestDistance = distanceFromCenter;
+        closestIndex = index;
+      }
+    });
 
-    if (cardIndex !== activeCardRef.current) {
-      activeCardRef.current = cardIndex;
-      setActiveCard(cardIndex);
+    if (closestIndex !== activeCardRef.current) {
+      activeCardRef.current = closestIndex;
+      setActiveCard(closestIndex);
     }
   });
 
@@ -340,17 +345,16 @@ function StartupScrollSection({ startups }: { startups: { name: string; descript
                   ref={(node) => {
                     cardRefs.current[i] = node;
                   }}
-                  className={`min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative bg-section-alt border transition-all duration-500 flex flex-col items-center justify-center text-center p-8 ${
-                    isActive ? "border-primary/30 shadow-[0_0_50px_rgba(230,126,34,0.2)] scale-[1.02]" : "border-border/50 scale-100"
+                  className={`min-w-[50vw] lg:min-w-[30vw] h-[40vh] rounded-3xl overflow-hidden relative bg-section-alt border transition-all duration-300 ease-out flex flex-col items-center justify-center text-center p-8 ${
+                    isActive ? "border-primary/45 shadow-[0_18px_45px_rgba(17,24,39,0.10)] scale-[1.015]" : "border-border/50 shadow-none scale-100"
                   }`}
                 >
-                  {/* Orange glow — active when card is centered */}
-                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/5 via-transparent to-primary/10 transition-opacity duration-500 pointer-events-none ${isActive ? "opacity-100" : "opacity-0"}`} />
-                  <div className={`absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-primary/25 rounded-full blur-3xl transition-opacity duration-500 pointer-events-none ${isActive ? "opacity-100" : "opacity-0"}`} />
+                  <div className={`absolute inset-x-10 top-0 h-1 rounded-b-full bg-primary transition-opacity duration-300 pointer-events-none ${isActive ? "opacity-90" : "opacity-0"}`} />
+                  <div className={`absolute inset-0 rounded-3xl ring-1 ring-inset ring-primary/10 transition-opacity duration-300 pointer-events-none ${isActive ? "opacity-100" : "opacity-0"}`} />
                   <div className="relative w-32 h-32 mb-5 flex items-center justify-center">
-                    <Image src={startup.logo} alt={startup.name} width={128} height={128} className={`w-full h-full object-contain mix-blend-multiply transition-transform duration-500 ${isActive ? "scale-110" : "scale-100"}`} />
+                    <Image src={startup.logo} alt={startup.name} width={128} height={128} className={`w-full h-full object-contain mix-blend-multiply transition-transform duration-300 ease-out ${isActive ? "scale-105" : "scale-100"}`} />
                   </div>
-                  <h4 className={`text-lg font-bold transition-colors duration-500 mb-2 ${isActive ? "text-primary" : "text-foreground"}`}>{startup.name}</h4>
+                  <h4 className={`text-lg font-bold transition-colors duration-300 mb-2 ${isActive ? "text-primary" : "text-foreground"}`}>{startup.name}</h4>
                   <p className="text-sm text-text-muted leading-relaxed max-w-xs">{startup.description}</p>
                 </div>
               );
