@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+*.mp4
+.playwright-mcp/
 
 # debug
 npm-debug.log*
