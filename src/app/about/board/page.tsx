@@ -40,18 +40,11 @@ const boardMembers = [
     imageClass: "",
   },
   {
-    name: "Mr Ravi Pahuja",
-    designation: "CEO, Raman Kant Munjal Foundation",
-    photo: "/images/board/ravi-pahuja.jpg",
-    linkedin: "https://www.linkedin.com/in/ravi-pahuja-3798184",
+    name: "Ms Manorama Nagarajan",
+    designation: "Group CFO, Krishna Maruti",
+    photo: "/images/board/manorama-nagarajan.jpg",
+    linkedin: "https://www.linkedin.com/in/manorama-nagarajan-a30a8013",
     imageClass: "",
-  },
-  {
-    name: "Dr Prem Kumar",
-    designation: "Executive Director, Munjal BCU Centre of Innovation",
-    photo: "/images/board/prem-kumar.png",
-    linkedin: "https://www.linkedin.com/in/prem-kumar-87966523b",
-    imageClass: "object-top",
   },
 ];
 
@@ -84,9 +77,9 @@ export default function BoardPage() {
 
       {/* Board Members Grid */}
       <section className="py-12 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {boardMembers.slice(0, 3).map((member, i) => (
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {boardMembers.map((member, i) => (
               <motion.div
                 key={member.name}
                 custom={i}
@@ -95,46 +88,7 @@ export default function BoardPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <div className="group text-center p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20">
-                  <div className="relative w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden aspect-square ring-3 ring-transparent group-hover:ring-primary transition-all duration-300">
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      width={128}
-                      height={128}
-                      className={`w-full h-full object-cover ${member.imageClass}`}
-                    />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-text-muted">
-                    {member.designation}
-                  </p>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex w-9 h-9 bg-section-alt rounded-full items-center justify-center hover:bg-primary hover:text-white transition-colors text-primary"
-                  >
-                    <LinkedinIcon className="w-4 h-4" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-8 mt-8">
-            {boardMembers.slice(3).map((member, i) => (
-              <motion.div
-                key={member.name}
-                custom={i + 3}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
-              >
-                <div className="group text-center p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20">
+                <div className="group h-full text-center p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20">
                   <div className="relative w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden aspect-square ring-3 ring-transparent group-hover:ring-primary transition-all duration-300">
                     <Image
                       src={member.photo}

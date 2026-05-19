@@ -72,9 +72,9 @@ const impactLevels = [
 
 const partnerships = [
   {
-    name: "RKMF",
+    name: "Raman Kant Munjal Foundation",
     description:
-      "Rajiv Kumar Memorial Foundation supporting grassroots women entrepreneurship development.",
+      "Provides women access to skill development programs — beauty parlour training, stitching, and computer courses — and plays a key role in mobilizing participants for the program.",
   },
   {
     name: "Hinduja Foundation",
@@ -168,9 +168,9 @@ export default function MeraBusinessPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { end: 500, suffix: "+", label: "Women Participated" },
-              { end: 260, suffix: "+", label: "Micro Businesses Established" },
-              { end: 14, suffix: "", label: "Cohorts Completed" },
+              { end: 600, suffix: "+", label: "Women Trained" },
+              { end: 300, suffix: "+", label: "Businesses Started" },
+              { end: 18, suffix: "", label: "Cohorts Completed" },
               { end: 20, suffix: "k", prefix: "\u20B95-", label: "Avg Monthly Turnover" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -368,8 +368,8 @@ export default function MeraBusinessPage() {
             <p className="text-text-muted leading-relaxed text-lg">
               Since its launch in <span className="font-semibold text-foreground">June 2022</span>, the
               Mera Business program has completed{" "}
-              <span className="font-semibold text-foreground">14 cohorts</span>,
-              transforming the lives of over 500 women across rural and
+              <span className="font-semibold text-foreground">18 cohorts</span>,
+              transforming the lives of over 600 women across rural and
               peri-urban areas through structured entrepreneurship training and
               sustained mentorship support.
             </p>

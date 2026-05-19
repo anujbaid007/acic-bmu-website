@@ -21,12 +21,12 @@ const subPrograms = [
   {
     title: "UDAAN \u2014 Idea to Impact",
     description:
-      "A 2-day entrepreneurship bootcamp designed to take participants from raw ideas to actionable impact. Covered design thinking, MVP development, prototyping, and pitching.",
+      "A 12-month entrepreneurship development programme supported by Aavishkaar Foundation, delivered through quarterly engagements focused on problem identification, design thinking, startup validation, industry exposure, mentorship, and venture pitching. UDAAN empowers grassroots student innovators from Uttar Pradesh to turn real-world challenges into scalable, sustainable ventures.",
     highlights: [
-      "29 students from 6 UP districts",
-      "Hands-on design thinking workshops",
-      "MVP development and prototyping",
-      "Pitching and feedback sessions",
+      "12-month programme with quarterly engagements",
+      "Supported by Aavishkaar Foundation",
+      "Grassroots student innovators from Uttar Pradesh",
+      "Design thinking, validation, mentorship & pitching",
     ],
     icon: Zap,
     image: "/images/programs/udaan.webp",
@@ -34,15 +34,15 @@ const subPrograms = [
   {
     title: "BOSCH-BMU Innovation Challenge",
     description:
-      "In collaboration with Bosch India Foundation, this innovation challenge focuses on Road Safety and Sustainable/Inclusive Mobility. 8 innovators were selected for the first cohort.",
+      "A structured innovation program jointly organized by BOSCH India Foundation and BML Munjal University, with implementation support from ACIC-BMU Foundation \u2014 identifying and supporting innovators working on breakthrough solutions in Road Safety and Sustainable, Inclusive Mobility.",
     highlights: [
-      "8 innovators selected for first cohort",
+      "8 innovators shortlisted for the first cohort",
       "Focus: Road Safety & Sustainable Mobility",
-      "2-day bootcamp: March 26\u201327, 2026",
+      "2-day bootcamp: 26\u201327 March 2026",
       "Held at BMU campus, Gurugram",
     ],
     icon: Car,
-    image: "/images/programs/bosch-bmu.png",
+    image: "/images/programs/bosch/bosch-1.png",
   },
 ];
 
@@ -111,8 +111,8 @@ export default function CorporateInnovationPage() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/programs/mera-business/dsc02116-(1).jpg"
-                  alt="Corporate Innovation"
+                  src="/images/programs/bosch/bosch-3.jpg"
+                  alt="Corporate Innovation Program"
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover"

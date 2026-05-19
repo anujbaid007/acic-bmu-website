@@ -129,7 +129,7 @@ export default function IncubationPage() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/programs/mera-business/dsc00874-(1).jpg"
+                  src="/images/programs/bosch/bosch-2.jpg"
                   alt="Startup Incubation Hub"
                   width={600}
                   height={400}

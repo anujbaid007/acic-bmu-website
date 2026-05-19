@@ -76,6 +76,19 @@ const categories: PartnerCategory[] = [
       { src: "/images/partners/industry/icici-bank.svg", alt: "ICICI Bank" },
     ],
   },
+  {
+    title: "Academic Partners",
+    description:
+      "Colleges, institutions, and foundations partnering with us to nurture grassroots student innovators.",
+    logos: [
+      { src: "/images/partners/academic/aavishkaar-foundation.png", alt: "Aavishkaar Foundation" },
+      { src: "/images/partners/academic/govt-girls-college.png", alt: "Govt Girls College", scale: 1.9 },
+      { src: "/images/partners/academic/mrk-college.png", alt: "MRK College", scale: 1.9 },
+      { src: "/images/partners/academic/dhamlawas.jpg", alt: "Dhamlawas", scale: 1.9 },
+      { src: "/images/partners/academic/lisana.jpg", alt: "Lisana", scale: 1.9 },
+      { src: "/images/partners/academic/manesar.png", alt: "Manesar", scale: 1.9 },
+    ],
+  },
 ];
 
 export default function PartnersPage() {
@@ -109,13 +122,14 @@ export default function PartnersPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto mt-12"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-4xl mx-auto mt-12"
           >
             {[
               { value: "12+", label: "Investor Partners" },
               { value: "10+", label: "Ecosystem Enablers" },
               { value: "8+", label: "Service Providers" },
               { value: "10+", label: "Industry Partners" },
+              { value: "6+", label: "Academic Partners" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="text-2xl font-bold text-white">{stat.value}</p>

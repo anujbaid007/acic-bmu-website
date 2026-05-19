@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Target, Eye, Rocket, Users, Building2, GraduationCap } from "lucide-react";
+import { Target, Eye, Rocket, Users, Building2 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Spotlight } from "@/components/ui/spotlight";
 
@@ -77,8 +77,8 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   <div className="rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/programs/mera-business/dsc00874-(1).jpg"
-                      alt="ACIC BMU Awards"
+                      src="/images/programs/mera-business/hero.jpg"
+                      alt="Mera Business Program"
                       width={300}
                       height={400}
                       className="w-full h-56 object-cover"
@@ -86,8 +86,8 @@ export default function AboutPage() {
                   </div>
                   <div className="rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/programs/mera-business/dsc02116-(1).jpg"
-                      alt="ACIC BMU Group"
+                      src="/images/programs/yuva/fpae-1.jpg"
+                      alt="Yuva Udyami Program"
                       width={300}
                       height={250}
                       className="w-full h-44 object-cover"
@@ -97,8 +97,8 @@ export default function AboutPage() {
                 <div className="space-y-4 pt-8">
                   <div className="rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/programs/mera-business/20250227_114723.jpg"
-                      alt="Workshop Session"
+                      src="/images/programs/udaan.webp"
+                      alt="UDAAN — Corporate Innovation Program"
                       width={300}
                       height={250}
                       className="w-full h-44 object-cover"
@@ -106,8 +106,8 @@ export default function AboutPage() {
                   </div>
                   <div className="rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/programs/mera-business/whatsapp-image-2024-05-28-at-3.03.02-pm.jpeg"
-                      alt="Community Event"
+                      src="/images/programs/bosch/bosch-3.jpg"
+                      alt="BOSCH-BMU Innovation Challenge"
                       width={300}
                       height={400}
                       className="w-full h-56 object-cover"
@@ -243,100 +243,15 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="grid grid-cols-2 gap-4"
             >
-              {[5, 6, 7, 8].map((n, i) => (
-                <motion.div
-                  key={n}
-                  custom={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="rounded-2xl overflow-hidden"
-                >
-                  <Image
-                    src={`/images/infrastructure/${n}.png`}
-                    alt={`BMU Campus ${n}`}
-                    width={300}
-                    height={220}
-                    className="w-full h-44 object-cover object-bottom hover:scale-105 transition-transform duration-500"
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== ABOUT ATAL INNOVATION MISSION ========== */}
-      <section className="py-12 lg:py-24 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {[9, 10, 1, 2].map((n, i) => (
-                <motion.div
-                  key={n}
-                  custom={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="rounded-2xl overflow-hidden"
-                >
-                  <Image
-                    src={`/images/infrastructure/${n}.png`}
-                    alt={`Innovation Facility ${n}`}
-                    width={300}
-                    height={220}
-                    className="w-full h-44 object-cover object-bottom hover:scale-105 transition-transform duration-500"
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-white/10 text-white/80 rounded-full mb-4">
-                Our Support
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-                About Atal Innovation Mission
-              </h2>
-              <p className="text-white/80 leading-relaxed text-lg">
-                The Atal Innovation Mission (AIM) is a flagship initiative set
-                up by the NITI Aayog to promote innovation and entrepreneurship
-                across the length and breadth of the country, based on a
-                detailed study and deliberations on innovation and
-                entrepreneurial needs of India in the years ahead.
-              </p>
-              <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                  <GraduationCap className="w-6 h-6 text-accent-light" />
-                </div>
-                <div>
-                  <p className="text-white font-semibold">
-                    Government of India Initiative
-                  </p>
-                  <p className="text-white/60 text-sm">
-                    Under NITI Aayog, supporting innovation nationwide
-                  </p>
-                </div>
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/bmu/campus.webp"
+                  alt="BML Munjal University campus"
+                  width={2560}
+                  height={1440}
+                  className="w-full h-[300px] lg:h-[420px] object-cover"
+                />
               </div>
             </motion.div>
           </div>

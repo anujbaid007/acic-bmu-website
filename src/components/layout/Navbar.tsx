@@ -116,26 +116,27 @@ export default function Navbar() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.97 }}
                             transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-                            className="absolute top-full left-0 mt-2 w-64 rounded-2xl border border-border/40 bg-white/95 backdrop-blur-xl shadow-xl overflow-hidden"
+                            className="absolute top-full left-0 pt-2 w-64"
                           >
-                            <div className="absolute -top-1.5 left-8 w-3 h-3 rotate-45 bg-white border-l border-t border-border/40" />
-                            {link.dropdown.map((item) => (
-                              <Link
-                                key={item.label}
-                                href={item.href}
-                                onClick={() => setActiveDropdown(null)}
-                                className="block px-4 py-3 hover:bg-primary/5 transition-colors border-b border-border/10 last:border-b-0"
-                              >
-                                <div className="font-medium text-sm text-foreground">
-                                  {item.label}
-                                </div>
-                                {item.description && (
-                                  <div className="text-xs text-text-muted mt-0.5">
-                                    {item.description}
+                            <div className="rounded-2xl border border-border/40 bg-white/95 backdrop-blur-xl shadow-xl overflow-hidden">
+                              {link.dropdown.map((item) => (
+                                <Link
+                                  key={item.label}
+                                  href={item.href}
+                                  onClick={() => setActiveDropdown(null)}
+                                  className="block px-4 py-3 hover:bg-primary/5 transition-colors border-b border-border/10 last:border-b-0"
+                                >
+                                  <div className="font-medium text-sm text-foreground">
+                                    {item.label}
                                   </div>
-                                )}
-                              </Link>
-                            ))}
+                                  {item.description && (
+                                    <div className="text-xs text-text-muted mt-0.5">
+                                      {item.description}
+                                    </div>
+                                  )}
+                                </Link>
+                              ))}
+                            </div>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -152,8 +153,19 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTA + Mobile */}
-            <div className="flex items-center gap-2">
+            {/* Govt endorsement logos + CTA + Mobile */}
+            <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+              {/* Supported by NITI Aayog & Atal Innovation Mission */}
+              <div className="hidden md:flex items-center lg:border-r lg:border-border/50 lg:pr-3">
+                <Image
+                  src="/images/logos/niti-aayog.png"
+                  alt="Supported by NITI Aayog and Atal Innovation Mission"
+                  width={674}
+                  height={288}
+                  className="h-12 lg:h-14 w-auto object-contain"
+                />
+              </div>
+
               <Button
                 asChild
                 className="hidden lg:inline-flex rounded-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white shadow-lg shadow-primary/25 px-5"
