@@ -67,7 +67,7 @@ export default function BannerSlider({ slides }: { slides: BannerSlide[] }) {
             <div
               key={i}
               style={{ backgroundColor: slide.bg ?? "#ffffff" }}
-              className="relative flex-[0_0_100%] aspect-[2/1] max-h-[88vh] min-h-[240px]"
+              className="relative flex-[0_0_100%] aspect-[2/1] max-h-[88vh]"
             >
               {slide.image ? (
                 <button

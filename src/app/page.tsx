@@ -345,7 +345,7 @@ export default function HomePage() {
   return (
     <>
       {/* Spacer so the full-width header sits above the banner before scroll */}
-      <div aria-hidden className="h-[80px] sm:h-[96px] xl:h-[112px] bg-white" />
+      <div aria-hidden className="h-[68px] sm:h-[88px] lg:h-[96px] xl:h-[112px] bg-white" />
 
       {/* ========== BANNER ========== */}
       <BannerSlider slides={bannerSlides} />

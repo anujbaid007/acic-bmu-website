@@ -82,7 +82,7 @@ export default function Navbar() {
             className={`mx-auto flex items-center justify-between transition-all duration-300 ${
               isScrolled
                 ? "max-w-[92rem] px-6 lg:px-8 py-3"
-                : "max-w-[104rem] px-5 sm:px-8 lg:px-12 py-3 sm:py-4"
+                : "max-w-[104rem] px-4 sm:px-8 lg:px-12 py-3 sm:py-4"
             }`}
           >
             {/* Logo: ACIC-BMU · BMU · Propel lockup */}
@@ -96,7 +96,7 @@ export default function Navbar() {
                 alt="ACIC-BMU Foundation · BML Munjal University · Propel Incubator @ BMU"
                 width={1987}
                 height={469}
-                className="h-14 sm:h-16 lg:h-16 xl:h-20 w-auto"
+                className="h-11 sm:h-14 lg:h-16 xl:h-20 w-auto"
                 priority
               />
             </Link>
@@ -166,13 +166,13 @@ export default function Navbar() {
             {/* Supported-by logos + CTA + Mobile */}
             <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
               {/* Supported by NITI Aayog & Atal Innovation Mission */}
-              <div className="hidden md:flex items-center md:border-r md:border-border/50 md:pr-3">
+              <div className="flex items-center border-r border-border/50 pr-2.5 sm:pr-3">
                 <Image
                   src="/images/logos/niti-aayog.png"
                   alt="Supported by NITI Aayog and Atal Innovation Mission"
                   width={674}
                   height={288}
-                  className="h-11 lg:h-12 xl:h-14 w-auto object-contain"
+                  className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto object-contain"
                 />
               </div>
 
