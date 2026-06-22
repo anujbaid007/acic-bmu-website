@@ -123,7 +123,7 @@ export default function MeraBusinessPage() {
               </span>
               <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight">
                 Mera Business{" "}
-                Program
+                Programme
               </h1>
               <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-lg">
                 Empowering women to launch micro-businesses — fostering
@@ -136,7 +136,7 @@ export default function MeraBusinessPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-primary font-semibold rounded-full hover:bg-gray-50 transition-colors shadow-lg"
                 >
-                  Join the Program <ArrowRight className="w-4 h-4" />
+                  Join the Programme <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </motion.div>
@@ -150,7 +150,7 @@ export default function MeraBusinessPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/programs/mera-business/hero.jpg"
-                  alt="Mera Business Program"
+                  alt="Mera Business Programme"
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover"
@@ -186,12 +186,12 @@ export default function MeraBusinessPage() {
         </div>
       </section>
 
-      {/* Program Structure */}
+      {/* Programme Structure */}
       <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="How It Works"
-            title="Program Structure"
+            title="Programme Structure"
             description="A carefully designed two-phase approach that takes women from learning fundamentals to running their own businesses."
           />
 
@@ -279,7 +279,7 @@ export default function MeraBusinessPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="In Action"
-            title="Glimpses from Our Program"
+            title="Glimpses from Our Programme"
             description="See the energy, determination, and joy of women entrepreneurs building their dreams through Mera Business."
           />
 
@@ -303,7 +303,7 @@ export default function MeraBusinessPage() {
               >
                 <Image
                   src={`/images/programs/mera-business/${img}`}
-                  alt="Mera Business Program"
+                  alt="Mera Business Programme"
                   width={400}
                   height={300}
                   className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
@@ -408,7 +408,7 @@ export default function MeraBusinessPage() {
                 href="/programs"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-colors"
               >
-                All Programs
+                All Programmes
               </Link>
             </div>
           </motion.div>

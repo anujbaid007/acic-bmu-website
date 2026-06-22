@@ -27,7 +27,7 @@ const teamMembers = [
   },
   {
     name: "Siraj Khan",
-    role: "Program Manager",
+    role: "Programme Manager",
     photo: "/images/team/siraj-khan.png",
     linkedin: "https://www.linkedin.com/in/siraj-khan-b7a04213b",
     imageClass: "",

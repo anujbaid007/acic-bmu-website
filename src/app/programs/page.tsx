@@ -41,7 +41,7 @@ const programs = [
     icon: Users,
     href: "/programs/mera-business",
     image: "/images/programs/mera-business/hero.jpg",
-    stats: "500+ Women Empowered",
+    stats: "600+ Women Empowered",
   },
   {
     title: "Corporate Innovation",
@@ -83,7 +83,7 @@ export default function ProgramsPage() {
               What We Do
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-              Our Programs
+              Our Programmes
             </h1>
             <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
               We drive impact through focused verticals — supporting startups at
@@ -101,7 +101,7 @@ export default function ProgramsPage() {
             {[
               { end: 110, suffix: "+", label: "Startups Supported" },
               { end: 110, suffix: " Cr+", prefix: "\u20B9", label: "Funds Raised" },
-              { end: 500, suffix: "+", label: "Women Empowered" },
+              { end: 600, suffix: "+", label: "Women Empowered" },
               { end: 850, suffix: " Cr+", prefix: "\u20B9", label: "Combined Valuation" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -117,12 +117,12 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* Program Cards */}
+      {/* Programme Cards */}
       <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Verticals"
-            title="Programs That Create Real Impact"
+            title="Programmes That Create Real Impact"
             description="Each vertical is designed to address a unique segment of the innovation ecosystem — from early-stage student entrepreneurs to corporate partnerships."
           />
 

@@ -85,7 +85,7 @@ export default function CorporateInnovationPage() {
               </span>
               <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight">
                 Corporate Innovation{" "}
-                Program
+                Programme
               </h1>
               <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-lg">
                 Fostering creativity, accelerating problem-solving, and driving
@@ -112,7 +112,7 @@ export default function CorporateInnovationPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/programs/bosch/bosch-3.jpg"
-                  alt="Corporate Innovation Program"
+                  alt="Corporate Innovation Programme"
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover"
@@ -143,7 +143,7 @@ export default function CorporateInnovationPage() {
                 <span className="text-primary">Innovation</span>
               </h2>
               <p className="text-text-muted leading-relaxed text-lg">
-                Our Corporate Innovation Program bridges the gap between
+                Our Corporate Innovation Programme bridges the gap between
                 established industries and emerging startups. By creating
                 structured collaboration opportunities, we help corporates solve
                 strategic challenges while giving innovators access to real-world
@@ -154,12 +154,12 @@ export default function CorporateInnovationPage() {
         </div>
       </section>
 
-      {/* Sub-Programs */}
+      {/* Sub-Programmes */}
       <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Initiatives"
-            title="Innovation Programs"
+            title="Innovation Programmes"
             description="Structured programs that bring together corporates, startups, and students to drive meaningful innovation."
           />
 
@@ -304,14 +304,14 @@ export default function CorporateInnovationPage() {
               transition={{ duration: 0.6 }}
               className="grid grid-cols-2 gap-4"
             >
-              {[7, 8, 9, 10].map((n) => (
+              {[1, 2, 3, 4].map((n) => (
                 <div key={n} className="rounded-2xl overflow-hidden">
                   <Image
-                    src={`/images/infrastructure/${n}.png`}
-                    alt={`Innovation Space ${n}`}
+                    src={`/images/corporate/corporate-${n}.jpg`}
+                    alt={`Corporate innovation bootcamp ${n}`}
                     width={300}
                     height={220}
-                    className="w-full h-44 object-cover object-bottom hover:scale-105 transition-transform duration-500"
+                    className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               ))}
@@ -339,7 +339,7 @@ export default function CorporateInnovationPage() {
             <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
               Whether you&apos;re a corporate looking to drive innovation or an
               innovator seeking industry challenges — our Corporate Innovation
-              Program is designed for meaningful collaboration.
+              Programme is designed for meaningful collaboration.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -352,7 +352,7 @@ export default function CorporateInnovationPage() {
                 href="/programs"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-colors"
               >
-                All Programs
+                All Programmes
               </Link>
             </div>
           </motion.div>

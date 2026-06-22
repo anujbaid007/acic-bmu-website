@@ -223,7 +223,7 @@ export default function StartupsPage() {
           <SectionHeading
             label="Join Our Ecosystem"
             title="Have an Innovative Idea?"
-            description="Apply to our incubation program and get access to mentorship, funding, infrastructure, and a thriving community of innovators."
+            description="Apply to our incubation programme and get access to mentorship, funding, infrastructure, and a thriving community of innovators."
           />
           <motion.a
             href="/programs/incubation"

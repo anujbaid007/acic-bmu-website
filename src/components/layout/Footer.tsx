@@ -6,11 +6,11 @@ const footerLinks = {
   "Quick Links": [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Programs", href: "/programs" },
+    { name: "Programmes", href: "/programs" },
     { name: "Startups", href: "/startups" },
     { name: "Partners", href: "/partners" },
   ],
-  Programs: [
+  Programmes: [
     { name: "Startup Incubation", href: "/programs/incubation" },
     { name: "Yuva Udyami", href: "/programs/yuva-udyami" },
     { name: "Mera Business", href: "/programs/mera-business" },
@@ -30,13 +30,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-5">
-            <Image
-              src="/images/logos/acic-logo.png"
-              alt="ACIC-BMU Foundation"
-              width={180}
-              height={54}
-              className="h-13 w-auto brightness-0 invert"
-            />
+            <div className="inline-flex bg-white rounded-xl p-2 sm:p-2.5 shadow-sm">
+              <Image
+                src="/images/logos/acic-bmu-propel.webp"
+                alt="ACIC-BMU Foundation · BML Munjal University · Propel Incubator @ BMU"
+                width={1987}
+                height={469}
+                className="h-[66px] sm:h-[84px] w-auto"
+              />
+            </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
               ACIC-BMU Foundation promotes and supports innovation &
               entrepreneurship, encouraging innovators within the university and

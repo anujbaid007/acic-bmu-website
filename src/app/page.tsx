@@ -27,7 +27,7 @@ const testimonials = [
     role: "Incubated Startup",
   },
   {
-    text: "The Yuva Udyami program opened my eyes to entrepreneurship. From ideation workshops to real investor pitches, it was a transformative experience.",
+    text: "The Yuva Udyami programme opened my eyes to entrepreneurship. From ideation workshops to real investor pitches, it was a transformative experience.",
     image: "/images/logos/bmu-logo.png",
     name: "Student Innovator",
     role: "Yuva Udyami Participant",
@@ -89,7 +89,7 @@ const programs = [
   {
     title: "Corporate Innovation",
     description:
-      "Partnering with industry on innovation challenges and CSR-driven programs that connect startups with corporates for pilots and scale.",
+      "Partnering with industry on innovation challenges and CSR-driven programmes that connect startups with corporates for pilots and scale.",
     icon: Building2,
     href: "/programs/corporate-innovation",
     image: "/images/programs/bosch/bosch-1.png",
@@ -157,9 +157,9 @@ const allPartners = [
 
 const events = [
   {
-    title: "Foundation Program for Aspiring Entrepreneurs",
+    title: "Foundation Programme for Aspiring Entrepreneurs",
     description:
-      "12-week pre-incubation program empowering early-stage student innovators from Government Polytechnic Colleges in Haryana.",
+      "12-week pre-incubation programme empowering early-stage student innovators from Government Polytechnic Colleges in Haryana.",
     image: "/images/events/fpae.jpg",
   },
   {
@@ -185,8 +185,20 @@ const fadeUp = {
   }),
 };
 
-// Empty banner placeholders — set `image` on each slide once final banner artwork is ready.
-const bannerSlides: BannerSlide[] = [{}, {}, {}];
+const bannerSlides: BannerSlide[] = [
+  {
+    image: "/images/banners/genesis-eir-banner.jpg",
+    alt: "GENESIS-EIR — Gen-Next Support for Innovative Startups · Startup Gateway, Your Pathway to Innovation",
+    bg: "#2e545e",
+    position: "top",
+  },
+  {
+    image: "/images/banners/mera-business-banner.jpg",
+    alt: "Mera Business — मेरा बिज़नेस · In collaboration with ACIC-BMU Foundation, Propel, BML Munjal University, Raman Kant Munjal Foundation & Enactus",
+    bg: "#9de6f8",
+    position: "center",
+  },
+];
 
 function StartupScrollSection({ startups }: { startups: { name: string; description: string; logo: string; website: string }[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -332,6 +344,9 @@ function StartupScrollSection({ startups }: { startups: { name: string; descript
 export default function HomePage() {
   return (
     <>
+      {/* Spacer so the full-width header sits above the banner before scroll */}
+      <div aria-hidden className="h-[80px] sm:h-[96px] xl:h-[112px] bg-white" />
+
       {/* ========== BANNER ========== */}
       <BannerSlider slides={bannerSlides} />
 
@@ -342,7 +357,7 @@ export default function HomePage() {
             {[
               { end: 110, suffix: "+", label: "Startups Supported" },
               { end: 850, suffix: " Cr+", prefix: "\u20B9", label: "Combined Valuation" },
-              { end: 500, suffix: "+", label: "Women Empowered" },
+              { end: 600, suffix: "+", label: "Women Empowered" },
               { end: 50, suffix: "+", label: "Industry Experts" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -390,7 +405,7 @@ export default function HomePage() {
               <h3 className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Our Mission</h3>
               <div className="space-y-3.5 mb-6">
                 {[
-                  { icon: Lightbulb, title: "Ignite Innovation", desc: "Programs, courses, and events that spark innovation among students, faculty, and community." },
+                  { icon: Lightbulb, title: "Ignite Innovation", desc: "Programmes, courses, and events that spark innovation among students, faculty, and community." },
                   { icon: Users, title: "Build a Network", desc: "Connecting entrepreneurs, mentors, experts, investors, and service providers in one ecosystem." },
                   { icon: Building2, title: "Engage Industry", desc: "Driving active industry participation in innovation with real-world pilot opportunities." },
                 ].map((item) => (
@@ -428,7 +443,7 @@ export default function HomePage() {
       <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground"><span className="relative inline-block">Programs<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span></h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground"><span className="relative inline-block">Programmes<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span></h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {programs.map((program, i) => (
@@ -476,7 +491,7 @@ export default function HomePage() {
         </div>
         <div className="text-center mt-10">
           <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all shadow-lg shadow-primary/25">
-            Apply to Become a Part of the Program <ArrowRight className="w-4 h-4" />
+            Apply to Become a Part of the Programme <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -484,7 +499,7 @@ export default function HomePage() {
       {/* ========== EVENTS ========== */}
       <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading label="Events" title="Shaping the Future, One Event at a Time" description="Hackathons, ideathons, bootcamps, and more — our events bring innovators together to solve real problems." />
+          <SectionHeading title="Events" description="Hackathons, ideathons, bootcamps, and more — our events bring innovators together to solve real problems." />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {events.map((event, i) => (
               <motion.div key={event.title} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -531,38 +546,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== INFRASTRUCTURE ========== */}
-      <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-section-alt overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary rounded-full mb-4">Infrastructure</span>
-              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-4 sm:mb-6">
-                World-Class Facilities for <span className="relative inline-block text-primary">Innovation<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span>
-              </h2>
-              <p className="text-sm sm:text-base text-text-muted leading-relaxed mb-4 sm:mb-6">
-                The incubator hub at BML Munjal University campus provides contemporary facilities required by innovators and startups. From co-working spaces to prototyping labs, our infrastructure is designed to accelerate your journey.
-              </p>
-              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-text-muted">
-                {["Co-working spaces & private cabins", "Prototyping & testing labs", "Conference & meeting rooms", "High-speed internet & IT infrastructure", "Mentorship & networking zones"].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="grid grid-cols-2 gap-4">
-              {[6, 7, 8, 9].map((n) => (
-                <div key={n} className="rounded-2xl overflow-hidden shadow-md">
-                  <Image src={`/images/infrastructure/${n}.png`} alt={`Facility ${n}`} width={300} height={220} className="w-full h-32 sm:h-44 object-cover object-bottom hover:scale-105 transition-transform duration-500" />
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* ========== CTA ========== */}
       <section className="pt-12 pb-8 lg:pt-24 bg-[#1a1a2e] text-white relative">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -576,7 +559,7 @@ export default function HomePage() {
                 Get In Touch <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/programs" className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base border-2 border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-colors">
-                Explore Programs
+                Explore Programmes
               </Link>
             </div>
           </motion.div>

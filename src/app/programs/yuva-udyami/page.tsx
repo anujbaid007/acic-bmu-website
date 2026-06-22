@@ -8,7 +8,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const subPrograms = [
   {
-    title: "Foundation Program for Aspiring Entrepreneurs (FPAE)",
+    title: "Foundation Programme for Aspiring Entrepreneurs (FPAE)",
     description:
       "A 12-week pre-incubation program designed for students of Government Polytechnic Colleges, helping them develop entrepreneurial skills and turn ideas into viable projects.",
     image: "/images/events/fpae.jpg",
@@ -44,7 +44,7 @@ const subPrograms = [
     image: "/images/events/problem-worth-solving.jpg",
   },
   {
-    title: "ATL Student Innovator Program",
+    title: "ATL Student Innovator Programme",
     description:
       "Designed for school students up to class 12th, this program nurtures early innovation skills through hands-on tinkering, prototyping, and mentorship support.",
     image: "/images/events/atl-student-innovator.jpg",
@@ -77,11 +77,11 @@ export default function YuvaUdyamiPage() {
               transition={{ duration: 0.7 }}
             >
               <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-white/10 text-white/80 rounded-full mb-6">
-                Youth Program
+                Youth Programme
               </span>
               <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight">
                 Yuva Udyami —{" "}
-                Young Entrepreneur Program
+                Young Entrepreneur Programme
               </h1>
               <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-lg">
                 A youth-focused initiative to cultivate entrepreneurial thinking
@@ -99,7 +99,7 @@ export default function YuvaUdyamiPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/events/fpae.jpg"
-                  alt="Yuva Udyami Program"
+                  alt="Yuva Udyami Programme"
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover"
@@ -161,12 +161,12 @@ export default function YuvaUdyamiPage() {
         </div>
       </section>
 
-      {/* Sub-Programs */}
+      {/* Sub-Programmes */}
       <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Initiatives"
-            title="Our Sub-Programs"
+            title="Our Sub-Programmes"
             description="A diverse portfolio of programs designed to ignite innovation, build entrepreneurial skills, and give youth real-world experience."
           />
 
@@ -261,13 +261,13 @@ export default function YuvaUdyamiPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-50 transition-colors shadow-lg"
               >
-                Join a Program <ArrowRight className="w-4 h-4" />
+                Join a Programme <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/programs"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-colors"
               >
-                All Programs
+                All Programmes
               </Link>
             </div>
           </motion.div>

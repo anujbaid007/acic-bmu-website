@@ -27,7 +27,7 @@ const navLinks: NavLink[] = [
     ],
   },
   {
-    label: "Programs",
+    label: "Programmes",
     href: "/programs",
     dropdown: [
       { label: "Startup Incubation", href: "/programs/incubation", description: "Idea to growth stage" },
@@ -69,24 +69,34 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-          isScrolled ? "w-[92%] max-w-6xl" : "w-[97%] max-w-[78rem]"
-        }`}
+        className="fixed top-0 inset-x-0 z-50"
       >
         <div
-          className={`relative rounded-full border border-border/40 bg-white/80 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-            isScrolled ? "shadow-xl shadow-black/5" : ""
+          className={`transition-all duration-300 ${
+            isScrolled
+              ? "mx-auto mt-3 w-[96%] max-w-[92rem] rounded-full border border-border/40 bg-white/80 backdrop-blur-xl shadow-xl shadow-black/5"
+              : "w-full border-b border-border/40 bg-white/95 backdrop-blur-md shadow-sm"
           }`}
         >
-          <div className="flex items-center justify-between px-6 py-4">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 shrink-0">
+          <div
+            className={`mx-auto flex items-center justify-between transition-all duration-300 ${
+              isScrolled
+                ? "max-w-[92rem] px-6 lg:px-8 py-3"
+                : "max-w-[104rem] px-5 sm:px-8 lg:px-12 py-3 sm:py-4"
+            }`}
+          >
+            {/* Logo: ACIC-BMU · BMU · Propel lockup */}
+            <Link
+              href="/"
+              className="flex items-center shrink-0"
+              aria-label="ACIC-BMU Foundation · BML Munjal University · Propel Incubator @ BMU"
+            >
               <Image
-                src="/images/logos/acic-logo.png"
-                alt="ACIC-BMU Foundation"
-                width={180}
-                height={54}
-                className="h-9 sm:h-11 w-auto"
+                src="/images/logos/acic-bmu-propel.webp"
+                alt="ACIC-BMU Foundation · BML Munjal University · Propel Incubator @ BMU"
+                width={1987}
+                height={469}
+                className="h-14 sm:h-16 lg:h-16 xl:h-20 w-auto"
                 priority
               />
             </Link>
@@ -100,7 +110,7 @@ export default function Navbar() {
                       onMouseEnter={() => setActiveDropdown(link.label)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      <button className="flex items-center gap-1 px-3.5 py-2 text-[15px] font-medium text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-primary/5">
+                      <button className="flex items-center gap-1 px-2.5 lg:px-2 xl:px-3.5 py-2 text-sm xl:text-[15px] font-medium text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-primary/5 whitespace-nowrap">
                         {link.label}
                         <motion.span
                           animate={{ rotate: activeDropdown === link.label ? 180 : 0 }}
@@ -144,7 +154,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="block px-3.5 py-2 text-[15px] font-medium text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-primary/5"
+                      className="block px-2.5 lg:px-2 xl:px-3.5 py-2 text-sm xl:text-[15px] font-medium text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-primary/5 whitespace-nowrap"
                     >
                       {link.label}
                     </Link>
@@ -153,16 +163,16 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Govt endorsement logos + CTA + Mobile */}
+            {/* Supported-by logos + CTA + Mobile */}
             <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
               {/* Supported by NITI Aayog & Atal Innovation Mission */}
-              <div className="hidden md:flex items-center lg:border-r lg:border-border/50 lg:pr-3">
+              <div className="hidden md:flex items-center md:border-r md:border-border/50 md:pr-3">
                 <Image
                   src="/images/logos/niti-aayog.png"
                   alt="Supported by NITI Aayog and Atal Innovation Mission"
                   width={674}
                   height={288}
-                  className="h-12 lg:h-14 w-auto object-contain"
+                  className="h-11 lg:h-12 xl:h-14 w-auto object-contain"
                 />
               </div>
 

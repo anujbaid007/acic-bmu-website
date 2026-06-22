@@ -117,7 +117,7 @@ const mentors = [
   },
   {
     name: "Rohit Gupta",
-    designation: "Program Director, Atal Innovation Mission",
+    designation: "Programme Director, Atal Innovation Mission",
     photo: "/images/mentors/rohit-gupta.jpg",
     linkedin: "https://www.linkedin.com/in/rohit-gupta-55824219/",
   },
@@ -143,7 +143,7 @@ const mentors = [
     name: "Sanjay Nagi",
     designation: "Global Consultant, Angel Investor",
     photo: "/images/mentors/sanjay-nagi.jpg",
-    linkedin: "https://www.linkedin.com/in/sanjay-nagi-1b4508/",
+    linkedin: "https://www.linkedin.com/in/dr-sanjay-nagi-1b4508/",
   },
   {
     name: "Shailendra Awasthi",

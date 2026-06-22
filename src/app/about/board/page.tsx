@@ -19,18 +19,18 @@ function LinkedinIcon({ className }: { className?: string }) {
 
 const boardMembers = [
   {
-    name: "Mr Akshay Munjal",
-    designation: "Founder and CEO, Hero Vired",
-    photo: "/images/board/akshay-munjal.jpg",
-    linkedin: "https://in.linkedin.com/in/akshay-munjal-5316467a",
-    imageClass: "object-top",
-  },
-  {
     name: "Ms Swati Munjal",
     designation: "President, BML Munjal University",
     photo: "/images/board/swati-munjal.jpg",
     linkedin: "https://www.linkedin.com/in/swati-munjal-3a5752",
     imageClass: "object-[60%_center]",
+  },
+  {
+    name: "Mr Akshay Munjal",
+    designation: "Founder and CEO, Hero Vired",
+    photo: "/images/board/akshay-munjal.jpg",
+    linkedin: "https://in.linkedin.com/in/akshay-munjal-5316467a",
+    imageClass: "object-top",
   },
   {
     name: "Prof Shyam Menon",
@@ -40,8 +40,22 @@ const boardMembers = [
     imageClass: "",
   },
   {
+    name: "Mr Ravi Pahuja",
+    designation: "CEO, Raman Kant Munjal Foundation",
+    photo: "/images/board/ravi-pahuja.jpg",
+    linkedin: "https://www.linkedin.com/in/ravi-pahuja-3798184",
+    imageClass: "",
+  },
+  {
+    name: "Dr Prem Kumar",
+    designation: "Executive Director, Munjal BCU Centre of Innovation and Enterprise",
+    photo: "/images/board/prem-kumar.png",
+    linkedin: "https://www.linkedin.com/in/prem-kumar-87966523b",
+    imageClass: "object-top",
+  },
+  {
     name: "Ms Manorama Nagarajan",
-    designation: "Group CFO, Krishna Maruti",
+    designation: "Chief Financial Officer, Krishna Maruti Group",
     photo: "/images/board/manorama-nagarajan.jpg",
     linkedin: "https://www.linkedin.com/in/manorama-nagarajan-a30a8013",
     imageClass: "",
@@ -78,7 +92,7 @@ export default function BoardPage() {
       {/* Board Members Grid */}
       <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {boardMembers.map((member, i) => (
               <motion.div
                 key={member.name}
@@ -87,6 +101,7 @@ export default function BoardPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
+                className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]"
               >
                 <div className="group h-full text-center p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20">
                   <div className="relative w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden aspect-square ring-3 ring-transparent group-hover:ring-primary transition-all duration-300">

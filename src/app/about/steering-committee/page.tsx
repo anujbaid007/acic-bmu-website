@@ -63,10 +63,11 @@ const committeeMembers: CommitteeMember[] = [
   },
   {
     name: "Dr. Gerry George",
-    designation: "Former Dean",
+    designation: "Dean",
     company: "Singapore Management University",
     photo: "/images/steering/gerry-george.jpg",
     imageClass: "object-[70%_top]",
+    former: true,
     linkedin: "https://www.linkedin.com/in/gerry-george-a713505",
   },
   {
@@ -79,9 +80,10 @@ const committeeMembers: CommitteeMember[] = [
   },
   {
     name: "Ms. Poyni Bhat",
-    designation: "Former CEO",
+    designation: "CEO",
     company: "SINE",
     photo: "/images/steering/poyni-bhat.jpg",
+    former: true,
     linkedin: "https://www.linkedin.com/in/poyni-bhatt-972b932",
   },
   {
@@ -100,9 +102,10 @@ const committeeMembers: CommitteeMember[] = [
   },
   {
     name: "Mr. Srinivas Rao",
-    designation: "Former CEO",
+    designation: "CEO",
     company: "T-Hub",
     photo: "/images/steering/srinivas-rao.jpg",
+    former: true,
     linkedin: "https://www.linkedin.com/in/srinivas-rao-mahankali-767b77175",
   },
   {
@@ -186,11 +189,6 @@ export default function SteeringCommitteePage() {
                 viewport={{ once: true }}
               >
                 <div className="group h-full text-center p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/20 relative">
-                  {member.former && (
-                    <span className="absolute top-3 right-3 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-text-muted/10 text-text-muted rounded-full">
-                      Former Member
-                    </span>
-                  )}
                   <div className="relative w-28 h-28 mx-auto mb-5 rounded-full overflow-hidden aspect-square border-4 border-section-alt group-hover:border-primary/20 transition-colors">
                     {member.photo ? (
                       <Image
@@ -210,6 +208,9 @@ export default function SteeringCommitteePage() {
                   </div>
                   <h3 className="text-base font-bold text-foreground">
                     {member.name}
+                    {member.former && (
+                      <span className="text-primary align-super text-xs">*</span>
+                    )}
                   </h3>
                   <p className="mt-1 text-sm text-primary font-medium">
                     {member.designation}
@@ -231,6 +232,9 @@ export default function SteeringCommitteePage() {
               </motion.div>
             ))}
           </div>
+          <p className="mt-10 text-center text-sm text-text-muted">
+            <span className="text-primary">*</span> Former member
+          </p>
         </div>
       </section>
     </>

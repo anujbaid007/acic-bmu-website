@@ -100,7 +100,7 @@ export default function IncubationPage() {
               transition={{ duration: 0.7 }}
             >
               <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-white/10 text-white/80 rounded-full mb-6">
-                Programs
+                Programmes
               </span>
               <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight">
                 Startup Incubation &{" "}
@@ -224,12 +224,12 @@ export default function IncubationPage() {
         </div>
       </section>
 
-      {/* Investment & Programs */}
+      {/* Investment & Programmes */}
       <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Funding Support"
-            title="Investment & Programs"
+            title="Investment & Programmes"
             description="We channel government and institutional funding to deserving startups through multiple schemes designed for different stages of growth."
           />
 
@@ -272,12 +272,12 @@ export default function IncubationPage() {
         </div>
       </section>
 
-      {/* Corporate Programs */}
+      {/* Corporate Programmes */}
       <section className="py-12 lg:py-24 bg-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Corporate Partnerships"
-            title="Corporate Programs"
+            title="Corporate Programmes"
             description="We partner with leading corporates to drive innovation through CSR initiatives and collaborative programs."
           />
 

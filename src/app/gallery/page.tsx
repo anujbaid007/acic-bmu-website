@@ -14,7 +14,7 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-  { src: "/images/events/fpae.jpg", title: "Faculty Program on Applied Entrepreneurship", desc: "Empowering educators with entrepreneurial skills" },
+  { src: "/images/events/fpae.jpg", title: "Faculty Programme on Applied Entrepreneurship", desc: "Empowering educators with entrepreneurial skills" },
   { src: "/images/infrastructure/1.png", title: "ACIC Infrastructure", desc: "State-of-the-art innovation facilities" },
   { src: "/images/infrastructure/2.png", title: "Workspace", desc: "Modern co-working environment" },
   { src: "/images/events/ideathon.jpg", title: "Ideathon", desc: "Where ideas take shape" },
@@ -28,7 +28,7 @@ const galleryImages: GalleryImage[] = [
   { src: "/images/infrastructure/7.png", title: "Event Hall", desc: "Hosting workshops and conferences" },
   { src: "/images/events/problem-worth-solving.jpg", title: "Problem Worth Solving", desc: "Identifying real-world challenges" },
   { src: "/images/infrastructure/8.png", title: "Startup Bay", desc: "Dedicated space for startup teams" },
-  { src: "/images/events/atl-student-innovator.jpg", title: "ATL Student Innovator Program", desc: "Nurturing young innovators from ATL schools" },
+  { src: "/images/events/atl-student-innovator.jpg", title: "ATL Student Innovator Programme", desc: "Nurturing young innovators from ATL schools" },
   { src: "/images/infrastructure/9.png", title: "Co-working Area", desc: "Open desks for early-stage founders" },
   { src: "/images/infrastructure/10.png", title: "Campus View", desc: "BMU campus innovation ecosystem" },
 ];
@@ -87,7 +87,7 @@ export default function GalleryPage() {
               Gallery
             </h1>
             <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              Moments from our journey — events, programs, workshops, and celebrations.
+              Moments from our journey — events, programmes, workshops, and celebrations.
             </p>
           </motion.div>
         </div>

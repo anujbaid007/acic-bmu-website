@@ -18,7 +18,7 @@ const fadeUp = {
 const missionPoints = [
   {
     icon: Rocket,
-    text: "Conduct programs, courses, events, challenges, and other engagements to ignite spirit of innovation and entrepreneurship among students, faculty and community.",
+    text: "Conduct programmes, courses, events, challenges, and other engagements to ignite spirit of innovation and entrepreneurship among students, faculty and community.",
   },
   {
     icon: Users,
@@ -78,7 +78,7 @@ export default function AboutPage() {
                   <div className="rounded-2xl overflow-hidden">
                     <Image
                       src="/images/programs/mera-business/hero.jpg"
-                      alt="Mera Business Program"
+                      alt="Mera Business Programme"
                       width={300}
                       height={400}
                       className="w-full h-56 object-cover"
@@ -87,7 +87,7 @@ export default function AboutPage() {
                   <div className="rounded-2xl overflow-hidden">
                     <Image
                       src="/images/programs/yuva/fpae-1.jpg"
-                      alt="Yuva Udyami Program"
+                      alt="Yuva Udyami Programme"
                       width={300}
                       height={250}
                       className="w-full h-44 object-cover"
@@ -98,7 +98,7 @@ export default function AboutPage() {
                   <div className="rounded-2xl overflow-hidden">
                     <Image
                       src="/images/programs/udaan.webp"
-                      alt="UDAAN — Corporate Innovation Program"
+                      alt="UDAAN — Corporate Innovation Programme"
                       width={300}
                       height={250}
                       className="w-full h-44 object-cover"

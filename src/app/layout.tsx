@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "ACIC-BMU Foundation | Innovating Ideas, Transforming Ventures",
   description:
-    "ACIC-BMU Foundation promotes innovation and entrepreneurship through incubation, mentorship, and community programs. Set up by BML Munjal University with support from Atal Innovation Mission, NITI Aayog.",
+    "ACIC-BMU Foundation promotes innovation and entrepreneurship through incubation, mentorship, and community programmes. Set up by BML Munjal University with support from Atal Innovation Mission, NITI Aayog.",
   keywords: [
     "ACIC",
     "BMU",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ACIC-BMU Foundation | Innovating Ideas, Transforming Ventures",
     description:
-      "Empowering innovators from students to women entrepreneurs across India through incubation, mentorship, and community programs.",
+      "Empowering innovators from students to women entrepreneurs across India through incubation, mentorship, and community programmes.",
     siteName: "ACIC-BMU Foundation",
     type: "website",
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ACIC-BMU Foundation",
     description:
-      "Innovating Ideas, Transforming Ventures — 110+ startups supported, 500+ women empowered.",
+      "Innovating Ideas, Transforming Ventures — 110+ startups supported, 600+ women empowered.",
   },
 };
 

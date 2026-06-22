@@ -14,9 +14,9 @@ interface EventItem {
 
 const events: EventItem[] = [
   {
-    title: "Foundation Program for Aspiring Entrepreneurs",
+    title: "Foundation Programme for Aspiring Entrepreneurs",
     description:
-      "12-week pre-incubation program for Government Polytechnic students in Haryana, building entrepreneurial foundations from the ground up.",
+      "12-week pre-incubation programme for Government Polytechnic students in Haryana, building entrepreneurial foundations from the ground up.",
     image: "/images/events/fpae.jpg",
   },
   {
@@ -46,11 +46,11 @@ const events: EventItem[] = [
   {
     title: "Problem Worth Solving",
     description:
-      "An interactive program encouraging problem-first thinking — helping participants identify real challenges before building solutions.",
+      "An interactive programme encouraging problem-first thinking — helping participants identify real challenges before building solutions.",
     image: "/images/events/problem-worth-solving.jpg",
   },
   {
-    title: "ATL Student Innovator Program",
+    title: "ATL Student Innovator Programme",
     description:
       "Designed for school students up to 12th grade to brainstorm creative solutions and develop an innovation mindset.",
     image: "/images/events/atl-student-innovator.jpg",
@@ -100,7 +100,7 @@ export default function EventsPage() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-white/10 text-white/80 rounded-full mb-4">
-              Events &amp; Programs
+              Events &amp; Programmes
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               Where Ideas Come Alive
@@ -135,7 +135,7 @@ export default function EventsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Events"
-            title="Programs That Drive Impact"
+            title="Programmes That Drive Impact"
             description="From student hackathons to women empowerment ceremonies — each event is designed to ignite innovation and create lasting change."
           />
 
@@ -192,7 +192,7 @@ export default function EventsPage() {
           <SectionHeading
             label="Get Involved"
             title="Want to Participate or Collaborate?"
-            description="Stay updated on upcoming events or partner with us to co-create impactful programs for students and entrepreneurs."
+            description="Stay updated on upcoming events or partner with us to co-create impactful programmes for students and entrepreneurs."
           />
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -211,7 +211,7 @@ export default function EventsPage() {
               href="/programs"
               className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-all"
             >
-              Explore Programs
+              Explore Programmes
             </a>
           </motion.div>
         </div>

@@ -76,7 +76,7 @@ export default async function Image() {
           >
             <span>110+ Startups</span>
             <span>|</span>
-            <span>500+ Women Empowered</span>
+            <span>600+ Women Empowered</span>
             <span>|</span>
             <span>850 Cr+ Valuation</span>
           </div>
