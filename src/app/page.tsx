@@ -11,6 +11,7 @@ import {
   Users,
   GraduationCap,
   Building2,
+  Sprout,
   ChevronRight,
 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -94,6 +95,15 @@ const programs = [
     href: "/programs/corporate-innovation",
     image: "/images/programs/bosch/bosch-1.png",
     stats: "Industry Partnerships",
+  },
+  {
+    title: "CIF Programme",
+    description:
+      "Helping grassroots innovators solve community problems with technology through infrastructural, financial, and learning support for lasting impact.",
+    icon: Sprout,
+    href: "/programs/cif",
+    image: "/images/programs/cif/cif-arpit-maurya.jpg",
+    stats: "Community Innovation",
   },
 ];
 
@@ -445,9 +455,9 @@ export default function HomePage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground"><span className="relative inline-block">Programmes<svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none"><path d="M2 8C40 2 80 2 100 6C120 10 160 4 198 4" stroke="#e67e22" strokeWidth="3" strokeLinecap="round" opacity="0.4" /></svg></span></h2>
           </motion.div>
-          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {programs.map((program, i) => (
-              <motion.div key={program.title} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <motion.div key={program.title} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="w-full sm:w-[calc(50%-0.75rem)] xl:w-[calc(25%-1.125rem)]">
                 <Link href={program.href} className="group block">
                   <div className="relative flex h-full flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50">
                     <GlowingEffect spread={40} glow proximity={64} disabled={false} borderWidth={2} />

@@ -15,6 +15,7 @@ const footerLinks = {
     { name: "Yuva Udyami", href: "/programs/yuva-udyami" },
     { name: "Mera Business", href: "/programs/mera-business" },
     { name: "Corporate Innovation", href: "/programs/corporate-innovation" },
+    { name: "CIF Programme", href: "/programs/cif" },
   ],
   "Get Involved": [
     { name: "Events", href: "/events" },

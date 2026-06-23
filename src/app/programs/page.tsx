@@ -9,6 +9,7 @@ import {
   Users,
   GraduationCap,
   Building2,
+  Sprout,
 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
@@ -51,6 +52,15 @@ const programs = [
     href: "/programs/corporate-innovation",
     image: "/images/programs/mera-business/dsc02116-(1).jpg",
     stats: "Multiple Corporate Partners",
+  },
+  {
+    title: "CIF Programme",
+    description:
+      "A community innovation programme helping grassroots innovators solve real problems with technology — providing infrastructural, financial, and learning support to uplift and sustainably transform their communities.",
+    icon: Sprout,
+    href: "/programs/cif",
+    image: "/images/programs/cif/cif-arpit-maurya.jpg",
+    stats: "Community Innovation",
   },
 ];
 
@@ -126,7 +136,7 @@ export default function ProgramsPage() {
             description="Each vertical is designed to address a unique segment of the innovation ecosystem — from early-stage student entrepreneurs to corporate partnerships."
           />
 
-          <div className="grid md:grid-cols-2 gap-8 mt-4">
+          <div className="flex flex-wrap justify-center gap-8 mt-4">
             {programs.map((program, i) => (
               <motion.div
                 key={program.title}
@@ -135,6 +145,7 @@ export default function ProgramsPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
+                className="w-full md:w-[calc(50%-1rem)]"
               >
                 <Link href={program.href} className="group block h-full">
                   <div className="relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 h-full flex flex-col">

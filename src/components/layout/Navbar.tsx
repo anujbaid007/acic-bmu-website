@@ -34,6 +34,7 @@ const navLinks: NavLink[] = [
       { label: "Yuva Udyami", href: "/programs/yuva-udyami", description: "Youth entrepreneurship" },
       { label: "Mera Business", href: "/programs/mera-business", description: "Women empowerment" },
       { label: "Corporate Innovation", href: "/programs/corporate-innovation", description: "Industry partnerships" },
+      { label: "CIF Programme", href: "/programs/cif", description: "Community innovation" },
     ],
   },
   { label: "Partners", href: "/partners" },
