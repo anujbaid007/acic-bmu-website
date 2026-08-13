@@ -109,24 +109,6 @@ export default function EventsPage() {
               Hackathons, ideathons, bootcamps, and more — our events bring innovators together to solve real problems and build the future.
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-6 mt-12"
-          >
-            {[
-              { value: "10+", label: "Events per Year" },
-              { value: "2000+", label: "Participants" },
-              { value: "50+", label: "Expert Mentors" },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-5 border border-white/10">
-                <p className="text-2xl font-bold text-white">{stat.value}</p>
-                <p className="text-xs text-white/60 mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </section>
 

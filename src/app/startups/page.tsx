@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Search, Rocket, TrendingUp, IndianRupee, Building2 } from "lucide-react";
+import { Search, Rocket, Building2 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { Spotlight } from "@/components/ui/spotlight";
 
 const startups = [
@@ -36,9 +37,9 @@ const startups = [
 const categories = ["All", "SISF Startups", "SAMRIDH Startups", "Genesis Startups"];
 
 const stats = [
-  { icon: Rocket, value: "110+", label: "Startups Incubated" },
-  { icon: IndianRupee, value: "₹110 Cr+", label: "Funding Raised" },
-  { icon: TrendingUp, value: "₹850 Cr+", label: "Combined Valuation" },
+  { end: 110, suffix: "+", label: "Startups Incubated" },
+  { end: 110, suffix: " Cr+", prefix: "₹", label: "Funding Raised" },
+  { end: 850, suffix: " Cr+", prefix: "₹", label: "Combined Valuation" },
 ];
 
 const fadeUp = {
@@ -102,9 +103,13 @@ export default function StartupsPage() {
                 key={stat.label}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
               >
-                <stat.icon className="w-8 h-8 text-primary-light mx-auto mb-3" />
-                <p className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</p>
-                <p className="text-sm text-white/60 mt-1">{stat.label}</p>
+                <AnimatedCounter
+                  end={stat.end}
+                  suffix={stat.suffix}
+                  prefix={stat.prefix}
+                  label={stat.label}
+                  light
+                />
               </div>
             ))}
           </motion.div>
@@ -196,13 +201,6 @@ export default function StartupsPage() {
                     <p className="text-sm text-text-muted leading-relaxed">
                       {startup.desc}
                     </p>
-
-                    {/* Badge */}
-                    <div className="mt-4">
-                      <span className="inline-block px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
-                        {startup.category}
-                      </span>
-                    </div>
                   </div>
                 </motion.div>
               ))}

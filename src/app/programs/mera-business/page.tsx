@@ -71,26 +71,10 @@ const impactLevels = [
 ];
 
 const partnerships = [
-  {
-    name: "Raman Kant Munjal Foundation",
-    description:
-      "Provides women access to skill development programs — beauty parlour training, stitching, and computer courses — and plays a key role in mobilizing participants for the program.",
-  },
-  {
-    name: "Hinduja Foundation",
-    description:
-      "\u20B98.5L CSR funding supporting training and mentorship for aspiring women entrepreneurs.",
-  },
-  {
-    name: "HDFC Bank",
-    description:
-      "\u20B960L CSR investment across 5 batches, training 170+ women with 100 receiving seed funding for their businesses.",
-  },
-  {
-    name: "SEWA Uttarakhand",
-    description:
-      "Self Employed Women\u2019s Association partnership for empowering women in the Uttarakhand region.",
-  },
+  { name: "Raman Kant Munjal Foundation" },
+  { name: "Hinduja Foundation" },
+  { name: "HDFC Bank" },
+  { name: "SEWA Uttarakhand" },
 ];
 
 const fadeUp = {
@@ -111,7 +95,7 @@ export default function MeraBusinessPage() {
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -323,7 +307,7 @@ export default function MeraBusinessPage() {
             description="Mera Business is made possible through the generous support and collaboration of leading organizations committed to women empowerment."
           />
 
-          <div className="grid md:grid-cols-2 gap-6 mt-4 max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 mt-4 max-w-4xl mx-auto">
             {partnerships.map((partner, i) => (
               <motion.div
                 key={partner.name}
@@ -332,21 +316,14 @@ export default function MeraBusinessPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-section-alt rounded-2xl p-6 border border-border/50 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 bg-section-alt rounded-full pl-4 pr-6 py-3 border border-border/50 hover:shadow-md hover:border-primary/20 transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
-                    <Handshake className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground mb-1">
-                      {partner.name}
-                    </h4>
-                    <p className="text-sm text-text-muted leading-relaxed">
-                      {partner.description}
-                    </p>
-                  </div>
+                <div className="w-9 h-9 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Handshake className="w-4 h-4 text-primary" />
                 </div>
+                <span className="font-semibold text-foreground text-sm sm:text-base">
+                  {partner.name}
+                </span>
               </motion.div>
             ))}
           </div>

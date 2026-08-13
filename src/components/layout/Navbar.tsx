@@ -37,7 +37,6 @@ const navLinks: NavLink[] = [
       { label: "CIF Programme", href: "/programs/cif", description: "Community innovation" },
     ],
   },
-  { label: "Partners", href: "/partners" },
   { label: "Startups", href: "/startups" },
   {
     label: "News & Events",
@@ -93,11 +92,11 @@ export default function Navbar() {
               aria-label="ACIC-BMU Foundation · BML Munjal University · Propel Incubator @ BMU"
             >
               <Image
-                src="/images/logos/acic-bmu-propel.webp"
-                alt="ACIC-BMU Foundation · BML Munjal University · Propel Incubator @ BMU"
-                width={1987}
-                height={469}
-                className="h-11 sm:h-14 lg:h-16 xl:h-20 w-auto"
+                src="/images/logos/acic-bmu-propel-2026.webp"
+                alt="BML Munjal University · Propel Incubator @ BMU · ACIC-BMU Foundation"
+                width={1800}
+                height={221}
+                className="h-6 sm:h-8 lg:h-9 xl:h-12 w-auto"
                 priority
               />
             </Link>

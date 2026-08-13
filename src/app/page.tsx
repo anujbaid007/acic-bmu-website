@@ -147,22 +147,56 @@ const startups = [
 ];
 
 const allPartners = [
+  // Investor partners
   "/images/partners/investors/survam-partner.png",
+  "/images/partners/investors/lead-angels-network.jpg",
   "/images/partners/investors/indian-angel-network.png",
-  "/images/partners/investors/ah!-ventures.png",
+  "/images/partners/investors/sanchi-connect.png",
   "/images/partners/investors/campus-fund.png",
+  "/images/partners/investors/ah!-ventures.png",
+  "/images/partners/investors/-we-founder-circle.png",
+  "/images/partners/investors/real-time-angel-fund.png",
+  "/images/partners/investors/fluid-ventures.png",
   "/images/partners/investors/yournest-vc.png",
+  "/images/partners/investors/pontaq-vc.jpg",
+  "/images/partners/investors/100x.vc.svg",
+  // Ecosystem enablers (India AI Mission intentionally excluded)
   "/images/partners/enablers/startup-india.png",
   "/images/partners/enablers/atal-innovation-mission.jpg",
   "/images/partners/enablers/tie-delhi-ncr.png",
+  "/images/partners/enablers/isba.png",
   "/images/partners/enablers/wadhwani-foundation.png",
+  "/images/partners/enablers/arthayan.png",
+  "/images/partners/enablers/manthan-by-psa.jpg",
+  "/images/partners/enablers/startup-haryana.jpg",
   "/images/partners/enablers/meity-startup-hub.png",
+  // Service providers
+  "/images/partners/service-providers/zoho-for-startups.png",
+  "/images/partners/service-providers/-aws.png",
+  "/images/partners/service-providers/wivitan-solution.webp",
+  "/images/partners/service-providers/cunomial-accubate.webp",
+  "/images/partners/service-providers/openweaver.jpg",
+  "/images/partners/service-providers/google.png",
+  "/images/partners/service-providers/ancrew-global.jpg",
+  "/images/partners/service-providers/ezylegal.png",
+  // Industry partners
   "/images/partners/industry/hero-motocorp.png",
   "/images/partners/industry/hsbc.png",
   "/images/partners/industry/cii.png",
-  "/images/partners/industry/hdfc-bank.png",
-  "/images/partners/industry/bpcl.png",
+  "/images/partners/industry/rane-group.png",
   "/images/partners/industry/aima.png",
+  "/images/partners/industry/hdfc-bank.png",
+  "/images/partners/industry/idfc-bank.png",
+  "/images/partners/industry/sbi-bank.jpg",
+  "/images/partners/industry/bpcl.png",
+  "/images/partners/industry/icici-bank.svg",
+  // Academic partners
+  "/images/partners/academic/aavishkaar-foundation.png",
+  "/images/partners/academic/govt-girls-college.png",
+  "/images/partners/academic/mrk-college.png",
+  "/images/partners/academic/dhamlawas.jpg",
+  "/images/partners/academic/lisana.jpg",
+  "/images/partners/academic/manesar.png",
 ];
 
 const events = [
@@ -542,17 +576,31 @@ export default function HomePage() {
           <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-white to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-white to-transparent z-10" />
           <div className="flex animate-scroll-left">
-            {[...allPartners, ...allPartners].map((src, i) => (
-              <div key={i} className="flex-shrink-0 mx-3 sm:mx-8 flex items-center justify-center">
-                <Image src={src} alt="Partner" width={180} height={80} className="h-10 w-24 sm:h-20 sm:w-44 object-contain grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" />
-              </div>
-            ))}
+            {[...allPartners, ...allPartners].map((src, i) => {
+              const tints = [
+                "bg-primary/5 border-primary/10",
+                "bg-accent/5 border-accent/10",
+                "bg-warm border-primary/10",
+                "bg-section-alt border-border/60",
+              ];
+              return (
+                <div
+                  key={i}
+                  className={`flex-shrink-0 mx-2 sm:mx-4 flex items-center justify-center rounded-2xl border p-3 sm:p-5 transition-transform duration-300 hover:scale-105 ${
+                    tints[i % tints.length]
+                  }`}
+                >
+                  <Image
+                    src={src}
+                    alt="Partner"
+                    width={180}
+                    height={80}
+                    className="h-10 w-24 sm:h-16 sm:w-36 object-contain"
+                  />
+                </div>
+              );
+            })}
           </div>
-        </div>
-        <div className="text-center mt-10">
-          <Link href="/partners" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            View All Partners <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </section>
 

@@ -8,7 +8,6 @@ const footerLinks = {
     { name: "About Us", href: "/about" },
     { name: "Programmes", href: "/programs" },
     { name: "Startups", href: "/startups" },
-    { name: "Partners", href: "/partners" },
   ],
   Programmes: [
     { name: "Startup Incubation", href: "/programs/incubation" },
@@ -33,11 +32,11 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-5">
             <div className="inline-flex bg-white rounded-xl p-2 sm:p-2.5 shadow-sm">
               <Image
-                src="/images/logos/acic-bmu-propel.webp"
-                alt="ACIC-BMU Foundation · BML Munjal University · Propel Incubator @ BMU"
-                width={1987}
-                height={469}
-                className="h-[66px] sm:h-[84px] w-auto"
+                src="/images/logos/acic-bmu-propel-2026.webp"
+                alt="BML Munjal University · Propel Incubator @ BMU · ACIC-BMU Foundation"
+                width={1800}
+                height={221}
+                className="h-[36px] sm:h-[46px] w-auto"
               />
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">

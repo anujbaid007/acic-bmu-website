@@ -258,8 +258,56 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ========== INFRASTRUCTURE GALLERY ========== */}
+      {/* ========== ABOUT ATAL INNOVATION MISSION ========== */}
       <section className="py-12 lg:py-24 bg-section-alt">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="rounded-2xl overflow-hidden shadow-lg bg-white border border-border/50 flex items-center justify-center h-[240px] lg:h-[340px] p-8 lg:p-12">
+                <Image
+                  src="/images/logos/niti-aayog.png"
+                  alt="Supported by NITI Aayog and Atal Innovation Mission"
+                  width={674}
+                  height={288}
+                  className="w-full max-w-xs lg:max-w-sm h-auto object-contain"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <SectionHeading
+                label="Our Enabler"
+                title="About Atal Innovation Mission"
+                align="left"
+              />
+              <p className="text-text-muted leading-relaxed text-lg -mt-6">
+                Atal Innovation Mission (AIM) is Government of India&apos;s
+                flagship initiative to create and promote a culture of innovation
+                and entrepreneurship across the length and breadth of our
+                country. AIM&apos;s objective is to develop new programmes and
+                policies for fostering innovation in different sectors of the
+                economy, provide platforms and collaboration opportunities for
+                different stakeholders, and create an umbrella structure to
+                oversee the innovation &amp; entrepreneurship ecosystem of the
+                country.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== INFRASTRUCTURE GALLERY ========== */}
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Facilities"

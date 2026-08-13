@@ -39,22 +39,22 @@ const committeeMembers: CommitteeMember[] = [
     linkedin: "https://www.linkedin.com/in/georgegohchingwah",
   },
   {
-    name: "Mr. Sunil Munjal",
-    designation: "Chairman",
-    company: "HERO Enterprises",
+    name: "Mr Sunil Kant Munjal",
+    designation: "Chancellor",
+    company: "BML Munjal University",
     photo: "/images/steering/sunil-munjal.jpg",
     imageClass: "object-top",
     linkedin: "https://www.linkedin.com/in/sunil-kant-munjal-555994199",
   },
   {
-    name: "Ms. Padmaja Ruparel",
+    name: "Ms Padmaja Ruparel",
     designation: "Founder",
     company: "IAN",
     photo: "/images/steering/padmaja-ruparel.jpg",
     linkedin: "https://www.linkedin.com/in/padmajaruparel",
   },
   {
-    name: "Mr. Rahul Garg",
+    name: "Mr Rahul Garg",
     designation: "Founder",
     company: "Moglix",
     photo: "/images/steering/rahul-garg.jpg",
@@ -62,16 +62,15 @@ const committeeMembers: CommitteeMember[] = [
     linkedin: "https://www.linkedin.com/in/rahulgarg",
   },
   {
-    name: "Dr. Gerry George",
+    name: "Dr Gerry George",
     designation: "Dean",
     company: "Singapore Management University",
     photo: "/images/steering/gerry-george.jpg",
     imageClass: "object-[70%_top]",
-    former: true,
     linkedin: "https://www.linkedin.com/in/gerry-george-a713505",
   },
   {
-    name: "Mr. Kris Gopalakrishnan",
+    name: "Mr Kris Gopalakrishnan",
     designation: "Chairman",
     company: "Axillor Ventures",
     photo: "/images/steering/kris-gopalakrishnan.jpg",
@@ -79,37 +78,37 @@ const committeeMembers: CommitteeMember[] = [
     linkedin: "https://www.linkedin.com/in/kris-gopalakrishnan-10b49950",
   },
   {
-    name: "Ms. Poyni Bhat",
-    designation: "CEO",
+    name: "Ms Poyni Bhat",
+    designation: "Former CEO",
     company: "SINE",
     photo: "/images/steering/poyni-bhat.jpg",
-    former: true,
     linkedin: "https://www.linkedin.com/in/poyni-bhatt-972b932",
   },
   {
-    name: "Dr. Neharika Vohra",
-    designation: "Board Member",
+    name: "Dr Neharika Vohra",
+    designation: "Former Board Member",
     company: "CIIE",
     photo: "/images/steering/neharika-vohra.jpg",
+    imageClass: "object-[62%_center]",
     linkedin: "https://www.linkedin.com/in/neharika-vohra-b185537",
   },
   {
-    name: "Mr. Vineet Rai",
+    name: "Mr Vineet Rai",
     designation: "Chairman",
     company: "Aavishkaar Group",
     photo: "/images/steering/vineet-rai.jpg",
+    imageClass: "object-[62%_center]",
     linkedin: "https://www.linkedin.com/in/vineet-rai-536160",
   },
   {
-    name: "Mr. Srinivas Rao",
-    designation: "CEO",
+    name: "Mr M Srinivas Rao",
+    designation: "Former CEO",
     company: "T-Hub",
     photo: "/images/steering/srinivas-rao.jpg",
-    former: true,
     linkedin: "https://www.linkedin.com/in/srinivas-rao-mahankali-767b77175",
   },
   {
-    name: "Mr. Kanwaljit Singh",
+    name: "Mr Kanwaljit Singh",
     designation: "Managing Partner",
     company: "Fireside Ventures",
     photo: "/images/steering/kanwaljit-singh.jpg",
@@ -117,7 +116,7 @@ const committeeMembers: CommitteeMember[] = [
     linkedin: "https://www.linkedin.com/in/singhkanwaljit",
   },
   {
-    name: "Dr. Sankalp Chaturvedi",
+    name: "Dr Sankalp Chaturvedi",
     designation: "Associate Dean",
     company: "Imperial College",
     photo: "/images/steering/sankalp-chaturvedi.jpg",
@@ -129,14 +128,6 @@ const committeeMembers: CommitteeMember[] = [
     company: "DRIPK Enterprises",
     photo: "/images/steering/dinesh-dua.jpg",
     linkedin: "https://www.linkedin.com/in/dr-dinesh-dua-2585163",
-  },
-  {
-    name: "Ms Swati Munjal",
-    designation: "President",
-    company: "BML Munjal University",
-    photo: "/images/board/swati-munjal.jpg",
-    imageClass: "object-[60%_center]",
-    linkedin: "https://www.linkedin.com/in/swati-munjal-3a5752",
   },
   {
     name: "Mr Akshay Munjal",
@@ -168,7 +159,6 @@ export default function SteeringCommitteePage() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <SectionHeading
-            label="Governance"
             title="Steering Committee"
             description="Distinguished industry leaders and academicians who provide strategic direction and oversight to ACIC-BMU Foundation."
           />
@@ -233,7 +223,7 @@ export default function SteeringCommitteePage() {
             ))}
           </div>
           <p className="mt-10 text-center text-sm text-text-muted">
-            <span className="text-primary">*</span> Former member
+            <span className="text-primary">*</span> Former Member
           </p>
         </div>
       </section>

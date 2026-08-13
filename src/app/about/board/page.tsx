@@ -27,14 +27,15 @@ const boardMembers = [
   },
   {
     name: "Mr Akshay Munjal",
-    designation: "Founder and CEO, Hero Vired",
+    designation:
+      "Pro Chancellor, BML Munjal University; Founder and CEO, Hero Vired",
     photo: "/images/board/akshay-munjal.jpg",
     linkedin: "https://in.linkedin.com/in/akshay-munjal-5316467a",
     imageClass: "object-top",
   },
   {
     name: "Prof Shyam Menon",
-    designation: "Vice President, BML Munjal University",
+    designation: "Officiating Vice Chancellor, BML Munjal University",
     photo: "/images/board/shyam-menon.jpg",
     linkedin: "https://www.linkedin.com/in/prof-shyam-menon-43655224b",
     imageClass: "",
