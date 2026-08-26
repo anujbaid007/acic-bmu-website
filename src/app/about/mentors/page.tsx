@@ -10,7 +10,7 @@ const mentors = [
   {
     name: "Ms Anmol Sehgal",
     designation: "iDEX: Innovation for Defence Excellence",
-    photo: "/images/mentors/anmol-sehgal.jpg",
+    photo: "/images/mentors/anmol-sehgal-updated.webp",
     linkedin: "https://www.linkedin.com/in/anmol-sehgal-965256128/",
   },
   {
@@ -76,7 +76,7 @@ const mentors = [
   {
     name: "Ms Naveena Reddy",
     designation: "Lead Angels",
-    photo: "/images/mentors/naveena-reddy.jpg",
+    photo: "/images/mentors/naveena-reddy-updated.webp",
     linkedin: "https://www.linkedin.com/in/naveena-reddy-bb294a141/",
   },
   {
@@ -100,7 +100,7 @@ const mentors = [
   {
     name: "Prof Kulbir Lamba",
     designation: "Ex CEO, IIT Jodhpur TISC",
-    photo: "/images/mentors/prof-kulbir-lamba.webp",
+    photo: "/images/mentors/prof-kulbir-lamba-updated.webp",
     linkedin: "https://www.linkedin.com/in/kulbirlamba/",
   },
   {

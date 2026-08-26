@@ -45,7 +45,7 @@ Source: `Website Update Part 3 (1).docx`. Line-level detail is in `IMPLEMENTATIO
     - Only four forms in use, no periods: **Mr** (23) · **Ms** (12) · **Dr** (11) · **Prof** (6)
     - Sources used, in order of reliability: the official `Team Details.xlsx`; `dr-` prefixes in people's own LinkedIn URLs; researched authoritative bios (own company sites, employer newsrooms, event listings); and finally the client for two people with no discoverable evidence.
     - **Prof Davinder Singh** — the internal spreadsheet said "Mr", but BMU's own faculty page and newsroom use "Prof". Corrected to Prof. Not "Dr" — BMU lists his doctorate as *"Pursuing"*.
-16. **Photo framing (partial)** — audited all 57 photos and visually reviewed the 17 with awkward aspect ratios. 15 were already well-framed (a previous developer had hand-tuned `object-position`). Fixed the 2 that weren't: **Mr Vineet Rai** and **Dr Neharika Vohra**, both set to `object-[62%_center]`. *The rest of this item could not be completed — see below.*
+16. **Photo framing (partial)** — of the 52 photos actually displayed on the site, 18 have an awkward source aspect ratio (very landscape or very portrait) and were reviewed one by one as they render in their circular frame. 16 were already well-framed by a previous developer's hand-tuned `object-position`. Fixed the 2 that weren't: **Mr Vineet Rai** and **Dr Neharika Vohra**, both set to `object-[62%_center]`. *The rest of this item — matching backgrounds and zoom level — could not be completed; see below for exactly who is affected and why.*
 
 ---
 
@@ -57,7 +57,46 @@ Source: `Website Update Part 3 (1).docx`. Line-level detail is in `IMPLEMENTATIO
 | 2 | Add missing text to the MeitY Startup Hub scheme card | The doc says *"There is text after EIR, Pilot and investment, we have to add that as well"* — it states the text exists in a source document but doesn't reproduce it. That source document isn't in the repo or Drive mirror. Writing this copy myself would mean inventing scheme terms for a government funding programme, which must not be fabricated. | The source document, or the missing sentences pasted directly. |
 | 3 | Fix the SAMRIDH scheme card text | The doc says *"The text is wrong in samridh. Kindly add that text only which is available in document."* It identifies the current text as wrong but doesn't say what the correct text is, and again refers to a document not available here. Same constraint as #2 — this is factual funding-scheme copy that cannot be guessed. | The correct SAMRIDH description. |
 | 4 | Recheck the Corporate Innovation page text | The doc says only *"The text is wrong in Corporate programmes section. Kindly recheck."* It doesn't identify which paragraph is wrong, in what way, or what it should say. The page has several text blocks (hero, "Where Corporates Meet Innovation", programme descriptions, focus areas, collaboration model) and there's no way to tell which is meant. | Point to the specific paragraph(s) and what they should say. |
-| 5 | Standardize profile photos — same framing, zoom, and background | **Partially done** (see item 16 above — 2 photos re-framed). The remainder is genuinely not a code problem:<br>• **Backgrounds cannot be changed by cropping.** They vary widely — outdoor greenery, pink flowers, grey studio, plain white, office interiors, near-black.<br>• **Zoom cannot be equalised by cropping.** A head-only shot cannot have shoulders added; some photos are head-only, others half-body with a desk.<br>• **Resolution cannot be recovered.** ~35 mentor photos are only 200×200 (one is 152×152); no processing adds detail.<br>• **Adobe's AI tools were investigated and ruled out** — their documentation caps batch work at ~20 files (there are 57), prompt-based background replacement is explicitly unsupported, and each file requires manual selection through a picker dialog that did not appear in this environment. | New headshots taken against a common backdrop at a consistent framing — or a designer running a Photoshop batch action (background replacement + face-aligned crop) across the existing 57. |
+| 5 | Standardize profile photos — same framing, zoom, and background | **Partially done** (see item 16 above — 2 photos re-framed). The remainder is genuinely not a code problem — see the named breakdown directly below this table. | New headshots taken against a common backdrop at a consistent framing — or a designer running a Photoshop batch action (background replacement + face-aligned crop) across the affected photos. |
+
+---
+
+### #5 in detail — who is affected and how
+
+**Backgrounds cannot be fixed by cropping — 17 people, each on a visibly different backdrop.** These are the photos with an awkward source aspect ratio that were individually reviewed as they render on the live site (2 of them — Vineet Rai and Neharika Vohra — have already had their *framing* fixed above; the background problem remains for all 17):
+
+| Person | Page | Background |
+|---|---|---|
+| Ms Swati Munjal | Board | Outdoor, greenery |
+| Mr Akshay Munjal | Board & Steering (same photo) | Blurred office interior |
+| Prof Shyam Menon | Board | Plain light background |
+| Dr Prem Kumar | Board | Blurred interior |
+| Mr Sunil Kant Munjal | Steering | Plain white |
+| Dr Gerry George | Steering | Dark gradient |
+| Mr Kris Gopalakrishnan | Steering | Dark grey gradient |
+| Dr Neharika Vohra | Steering | Outdoor, university building *(framing already fixed)* |
+| Mr Vineet Rai | Steering | Office interior *(framing already fixed)* |
+| Dr Sankalp Chaturvedi | Steering | Light grey |
+| Ms Gitanjali Puri | Mentors | Busy pink-flower background |
+| Mr Vikas Gupta | Mentors | Dark textured background |
+| Prof Vinay Nangia | Mentors | Plain grey |
+| Prof Davinder Singh | Team | Dark studio background |
+| Mr Ramanuj Jaju | Team | Light studio background |
+| Mr Prashant Kourav | Team | Plain white |
+| Mr Chaitanya Pathania | Team | Plain white |
+
+The remaining 35 photos on the site are roughly square already and weren't individually reviewed for background — but since they come from different original shoots, they very likely vary just as much. Only these 17 were confirmed by eye.
+
+**Resolution cannot be recovered — 36 of the 52 photo appearances are under 300px on the short side** (35 distinct files; Akshay Munjal's photo is one file shown on both Board and Steering). Most are exactly 200×200. No cropping or AI tool adds detail that was never captured, so these will look visibly softer than the higher-resolution photos no matter what else is done. By page:
+
+- **Mentors (24 of 26)** — Ms Anmol Sehgal, Mr Abhinav Grover, Mr Anurag Jain, Mr Manish Johari, Mr Pankaj Agarwal, Mr Rajive Gulati, Ms Hanisha Vaswani, Ms Naveena Reddy, Ms Ariba Khan, Mr Rakesh Sharma, Mr Rohit Gupta, Mr Sajid Raza, Mr Sameer Gupta, Ms Sanghamitra Bahsin, Dr Sanjay Nagi, Mr Shailendra Awasthi, Dr Vibhuti Agarwal (all 200×200) — plus Dr Shweta Singh (223×226), Dr Deepak Pandit (274×299), Prof Devanjali Relan (274×299), Prof Vinay Nangia (275×183), Mr Vikas Gupta (350×232), Prof Anita Lal (152×152, the smallest on the site), Dr Shashwat Pathak (173×173). *Only Ms Gitanjali Puri and Prof Kulbir Lamba are above 300px.*
+- **Steering (7 of 14)** — Dr Neharika Vohra (301×167), Dr Sankalp Chaturvedi (300×168), Mr Sunil Kant Munjal (200×250), Ms Poyni Bhat (202×202), Mr Kanwaljit Singh (217×232), Dr Dinesh Dua (268×268), and Mr Akshay Munjal (285×400, shared with Board)
+- **Board (4 of 6)** — Mr Ravi Pahuja (239×269), Prof Shyam Menon (400×266), Ms Swati Munjal (400×267), and Mr Akshay Munjal (285×400, shared with Steering)
+- **Team (1 of 6)** — Prof Davinder Singh (266×400)
+
+**Zoom level cannot be equalised by cropping either way.** Some photos (Prashant Kourav, Chaitanya Pathania) are tight head-only shots with no room to crop out further; others (Vineet Rai, Kris Gopalakrishnan) are half-body shots with visible desks or railings. Cropping can only trim what's already in frame — it can't add shoulders to a headshot or zoom into detail a 200×200 file doesn't have.
+
+**Why AI tooling couldn't fill the gap:** Adobe's background-removal tool was investigated. Its own documentation caps batch processing at roughly 20 files (52 photos are in play here), prompt-based background *replacement* is explicitly listed as unsupported (only a flat solid colour is possible), and every file requires a manual selection through a picker dialog that did not appear in this environment — so even the 20-file ceiling couldn't be tested end-to-end.
 
 ---
 
@@ -72,4 +111,4 @@ Source: `Website Update Part 3 (1).docx`. Line-level detail is in `IMPLEMENTATIO
 
 ## Verification
 
-Every change was checked with `npx tsc --noEmit` (exit 0) and `npx eslint` (clean). Layout-affecting changes — the logo swap, the hero spacing fix, and the partners marquee — were additionally verified live in the browser at mobile, lg, and xl breakpoints. All 45 partner logo paths and all 57 people photo paths were confirmed to resolve on disk.
+Every change was checked with `npx tsc --noEmit` (exit 0) and `npx eslint` (clean). Layout-affecting changes — the logo swap, the hero spacing fix, and the partners marquee — were additionally verified live in the browser at mobile, lg, and xl breakpoints. All 45 partner logo paths and all 52 referenced people-photo paths were confirmed to resolve on disk.

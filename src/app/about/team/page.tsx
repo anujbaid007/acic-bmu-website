@@ -21,9 +21,9 @@ const teamMembers = [
   {
     name: "Prof Davinder Singh",
     role: "CEO",
-    photo: "/images/team/davinder-singh.jpg",
+    photo: "/images/team/davinder-singh-updated.webp",
     linkedin: "https://www.linkedin.com/in/davindertaru",
-    imageClass: "object-top",
+    imageClass: "",
   },
   {
     name: "Ms Divya Saini",
@@ -51,14 +51,14 @@ const teamMembers = [
     role: "Management Trainee",
     photo: "/images/team/prashant-kourav.jpg",
     linkedin: "https://www.linkedin.com/in/prashant-kourav-94715b351",
-    imageClass: "",
+    imageClass: "object-[center_15%]",
   },
   {
     name: "Mr Chaitanya Pathania",
     role: "Management Trainee",
     photo: "/images/team/chaitanya-pathania.jpeg",
     linkedin: "https://www.linkedin.com/in/chaitanyafin",
-    imageClass: "",
+    imageClass: "object-[center_15%]",
   },
 ];
 

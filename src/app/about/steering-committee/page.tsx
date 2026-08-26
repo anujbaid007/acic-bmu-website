@@ -33,8 +33,7 @@ const committeeMembers: CommitteeMember[] = [
     name: "Dr George Goh",
     designation: "Founder",
     company: "OSSIA — Singapore",
-    photo: "/images/steering/george-goh.jpg",
-    imageClass: "object-[70%_top]",
+    photo: "/images/steering/george-goh-updated.webp",
     former: true,
     linkedin: "https://www.linkedin.com/in/georgegohchingwah",
   },
@@ -50,7 +49,7 @@ const committeeMembers: CommitteeMember[] = [
     name: "Ms Padmaja Ruparel",
     designation: "Founder",
     company: "IAN",
-    photo: "/images/steering/padmaja-ruparel.jpg",
+    photo: "/images/steering/padmaja-ruparel-updated.webp",
     linkedin: "https://www.linkedin.com/in/padmajaruparel",
   },
   {
@@ -81,7 +80,7 @@ const committeeMembers: CommitteeMember[] = [
     name: "Ms Poyni Bhat",
     designation: "Former CEO",
     company: "SINE",
-    photo: "/images/steering/poyni-bhat.jpg",
+    photo: "/images/steering/poyni-bhat-updated.webp",
     linkedin: "https://www.linkedin.com/in/poyni-bhatt-972b932",
   },
   {

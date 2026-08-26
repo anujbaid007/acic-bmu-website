@@ -21,9 +21,9 @@ const boardMembers = [
   {
     name: "Ms Swati Munjal",
     designation: "President, BML Munjal University",
-    photo: "/images/board/swati-munjal.jpg",
+    photo: "/images/board/swati-munjal-updated.webp",
     linkedin: "https://www.linkedin.com/in/swati-munjal-3a5752",
-    imageClass: "object-[60%_center]",
+    imageClass: "",
   },
   {
     name: "Mr Akshay Munjal",
