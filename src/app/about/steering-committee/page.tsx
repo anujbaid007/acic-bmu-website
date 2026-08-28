@@ -49,7 +49,7 @@ const committeeMembers: CommitteeMember[] = [
     name: "Ms Padmaja Ruparel",
     designation: "Founder",
     company: "IAN",
-    photo: "/images/steering/padmaja-ruparel-updated.webp",
+    photo: "/images/steering/padmaja-ruparel-v4.webp",
     linkedin: "https://www.linkedin.com/in/padmajaruparel",
   },
   {

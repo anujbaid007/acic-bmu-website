@@ -42,16 +42,16 @@ const teamMembers = [
   {
     name: "Mr Ramanuj Jaju",
     role: "Sr. Account Executive",
-    photo: "/images/team/ramanuj-jajoo.jpg",
+    photo: "/images/team/ramanuj-jaju-updated.webp",
     linkedin: "",
-    imageClass: "object-top",
+    imageClass: "",
   },
   {
     name: "Mr Prashant Kourav",
     role: "Management Trainee",
-    photo: "/images/team/prashant-kourav.jpg",
+    photo: "/images/team/prashant-kourav-updated.webp",
     linkedin: "https://www.linkedin.com/in/prashant-kourav-94715b351",
-    imageClass: "object-[center_15%]",
+    imageClass: "",
   },
   {
     name: "Mr Chaitanya Pathania",

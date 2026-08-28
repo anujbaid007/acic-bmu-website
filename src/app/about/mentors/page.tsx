@@ -16,7 +16,7 @@ const mentors = [
   {
     name: "Dr Deepak Pandit",
     designation: "BML Munjal University",
-    photo: "/images/mentors/prof.-deepak-pandit.jpg",
+    photo: "/images/mentors/prof.-deepak-pandit-updated.webp",
     linkedin: "https://www.linkedin.com/in/deepakpandit/",
   },
   {
